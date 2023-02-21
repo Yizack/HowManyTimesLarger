@@ -67,7 +67,6 @@ export default {
   computed: {
     percent() {
       let p = (this.params[0].km2 / this.params[1].km2) * 100;
-      console.log(p);
       return p < 1 ? fixed(p, 2) : fixed(p);
     },
   }

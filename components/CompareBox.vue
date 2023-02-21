@@ -19,7 +19,7 @@ import { countries } from "~/assets/data/countries.json";
               </div> 
             </div> 
             <!-- list -->
-            <ul class="autocomplete-list position-absolute rounded border bg-body py-2 px-0 shadow w-100" v-if="search.searching && search.field === 1">
+            <ul class="autocomplete-list position-absolute rounded border bg-body py-2 px-0 shadow w-100 m-0" v-if="search.searching && search.field === 1">
               <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" :id="country.code_2" @click="field1 = selectCountry(country)">{{ country.name_en }}</li>
               <li class="py-2 px-3" v-if="!search.arr.length"><i>Not results found</i></li>
             </ul>
@@ -36,7 +36,7 @@ import { countries } from "~/assets/data/countries.json";
               </div> 
             </div> 
             <!-- list -->
-            <ul class="autocomplete-list position-absolute rounded border bg-body py-2 px-0 shadow w-100" v-if="search.searching && search.field === 2">
+            <ul class="autocomplete-list position-absolute rounded border bg-body py-2 px-0 shadow w-100 m-0" v-if="search.searching && search.field === 2">
               <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" :id="country.code_2" @click="field2 = selectCountry(country)">{{ country.name_en }}</li>
               <li class="py-2 px-3" v-if="!search.arr.length">Not results found</li>
             </ul>
@@ -88,6 +88,8 @@ export default {
   },
   methods: {
     searchBox(event, field) {
+      this.$refs[`field${field}`].classList.remove("is-invalid");
+
       const input = event.target.value;
       this.search.field = field;
       this.search.searching = true;

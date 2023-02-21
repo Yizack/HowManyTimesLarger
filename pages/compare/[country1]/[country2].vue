@@ -25,7 +25,7 @@ definePageMeta({ layout: "main" });
       <div class="row m-0 p-0">
         <div class="col-lg-12 order-2 order-lg-1 m-0 p-0">
           <div class="mt-n4">
-            <CompareBox :country1="params[0].name_en" :country2="params[1].name_en"/>
+            <CompareBox :country1="params[0]" :country2="params[1]"/>
           </div>
         </div>
         <div class="col-lg-12 order-1 order-lg-2 m-0 p-0 text-dark-emphasis text-center">
@@ -33,7 +33,7 @@ definePageMeta({ layout: "main" });
             <p class="display-5">
               <b>{{ params[0].name_en }}</b> is
               <template v-if="compared.diff > 0">
-                <b class="text-primary-emphasis">~{{ fixed(compared.diff) }}</b> times
+                <b class="text-primary-emphasis">{{ fixed(compared.diff) }}</b> times
               </template>
               <b class="text-uppercase text-primary-emphasis">{{ compared.word }}</b>
               {{ compared.func }}

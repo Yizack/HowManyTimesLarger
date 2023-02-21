@@ -1678,19 +1678,6 @@
       "km2": 30
     },
     {
-      "name_en": "North Macedonia",
-      "name_es": "Macedonia del Norte",
-      "continent_en": "Europe",
-      "continent_es": "Europa",
-      "capital_en": "Skopje",
-      "capital_es": "Skopje",
-      "dial_code": "+389",
-      "code_2": "MK",
-      "code_3": "MKD",
-      "tld": ".mk",
-      "km2": 25713
-    },
-    {
       "name_en": "Madagascar",
       "name_es": "Madagascar",
       "continent_en": "Africa",
@@ -2118,6 +2105,19 @@
       "code_3": "PRK",
       "tld": ".kp",
       "km2": 120538
+    },
+    {
+      "name_en": "North Macedonia",
+      "name_es": "Macedonia del Norte",
+      "continent_en": "Europe",
+      "continent_es": "Europa",
+      "capital_en": "Skopje",
+      "capital_es": "Skopje",
+      "dial_code": "+389",
+      "code_2": "MK",
+      "code_3": "MKD",
+      "tld": ".mk",
+      "km2": 25713
     },
     {
       "name_en": "Northern Mariana Islands",

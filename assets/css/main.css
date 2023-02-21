@@ -1,0 +1,7 @@
+@media (min-width: 992px) {
+  /* lg */
+
+  .mt-n4 {
+    margin-top: -4rem !important;
+  }
+}

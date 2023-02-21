@@ -20,7 +20,7 @@ import { countries } from "~/assets/data/countries.json";
             </div> 
             <!-- list -->
             <ul class="autocomplete-list position-absolute rounded border bg-body py-2 px-0 shadow w-100" v-if="search.searching && search.field === 1">
-              <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" @click="field1 = selectCountry(country)">{{ country.name_en }}</li>
+              <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" :id="country.code_2" @click="field1 = selectCountry(country)">{{ country.name_en }}</li>
               <li class="py-2 px-3" v-if="!search.arr.length"><i>Not results found</i></li>
             </ul>
           </div>
@@ -37,7 +37,7 @@ import { countries } from "~/assets/data/countries.json";
             </div> 
             <!-- list -->
             <ul class="autocomplete-list position-absolute rounded border bg-body py-2 px-0 shadow w-100" v-if="search.searching && search.field === 2">
-              <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" @click="field2 = selectCountry(country)">{{ country.name_en }}</li>
+              <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" :id="country.code_2" @click="field2 = selectCountry(country)">{{ country.name_en }}</li>
               <li class="py-2 px-3" v-if="!search.arr.length">Not results found</li>
             </ul>
           </div>
@@ -54,9 +54,10 @@ import { countries } from "~/assets/data/countries.json";
 <style scoped>
 .autocomplete-list {
   list-style-type: none;
-  z-index: 1
+  z-index: 1;
+  max-height: 300px;
+  overflow-y: auto;
 }
-
 .autocomplete-list li:hover {
   background-color: rgba(var(--bs-tertiary-bg-rgb));
 }
@@ -96,12 +97,9 @@ export default {
         this.search.searching = false;
       }
 
-      let matches = 0;
-
       this.search.arr = countries.filter(country => {
-        let wordsMatch = String(input).toLocaleLowerCase().split(" ").map(str => String(country.name_en).toLocaleLowerCase().includes(str)).every(Boolean);
-        if (wordsMatch && matches < 10) {
-          matches++;
+        let wordsMatch = String(input).toLocaleLowerCase().split(" ").map(char => String(country.name_en).toLocaleLowerCase().includes(char)).every(Boolean);
+        if (wordsMatch) {
           return country;
         }
       });
@@ -135,8 +133,8 @@ export default {
     }
   },
   created() {
-    this.field1 = this.country1 || {};
-    this.field2 = this.country2 || {};
+    Object.assign(this.field1, this.country1);
+    Object.assign(this.field2, this.country2);
   }
 };
 </script>

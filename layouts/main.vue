@@ -1,5 +1,5 @@
 <template>
-  <appNavbar/>
+  <AppNavbar/>
   <slot/>
 </template>
 

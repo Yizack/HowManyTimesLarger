@@ -40,7 +40,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 <script>
 export default {
-  name: "appNavbar",
+  name: "AppNavbar",
   data() {
     return {
       dark: true

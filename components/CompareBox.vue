@@ -44,7 +44,7 @@ export default {
   props: ["country1", "country2"],
   data() {
     return {
-      invalid_country : "Please select a valid country from the list",
+      invalid_country : "Please select a valid option from the list",
       field1: {
         value: ""
       },

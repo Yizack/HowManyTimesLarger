@@ -4,7 +4,7 @@ export const fixed = (n = 0, d = 0) => {
 
 export const compareNumbers = (n1, n2) => {
   if (n1 > n2) {
-    const diff = n1 - n2;
+    const diff = n1 / n2;
     return {
       diff: diff,
       word: "larger",
@@ -12,7 +12,7 @@ export const compareNumbers = (n1, n2) => {
     };
   }
   else if (n1 < n2) {
-    const diff = n2 - n1;
+    const diff = n2 / n1;
     return {
       diff: diff,
       word: "smaller",

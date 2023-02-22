@@ -18,6 +18,10 @@
   background-color: var(--bs-dark-text);
 }
 
+[data-bs-theme="dark"] .shape {
+  filter: invert(1);
+}
+
 
 @media (min-width: 992px) {
   /* lg */

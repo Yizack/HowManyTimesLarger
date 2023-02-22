@@ -5,7 +5,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 </script>
 
 <template>
-  <nav id="navbar" class="navbar navbar-expand-lg px-3 mb-3 sticky-top fixed">
+  <nav id="navbar" class="navbar navbar-expand-lg px-3 sticky-top fixed bg-body border-bottom">
     <div class="container">
       <NuxtLink class="navbar-brand" to="/">{{ siteInfo.name }}</NuxtLink>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

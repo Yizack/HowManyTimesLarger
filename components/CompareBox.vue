@@ -13,14 +13,15 @@ import { countries } from "~/assets/data/countries.json";
           <div class="position-relative">
             <div class="input-group has-validation">
               <span class="input-group-text bg-body"><FontAwesomeIcon :icon="faLocationDot" width="16" height="16"/></span>
-              <input class="form-control form-control-lg bg-body" :value="field1.name_en" @input="field1.name_en = $event.target.value" @keyup="searchBox($event, 1)" type="text" placeholder="Type a country.." ref="field1" required>
+              <input class="form-control form-control-lg bg-body text-dark-emphasis" :value="field1.name_en" @input="field1.name_en = $event.target.value" @keyup="searchBox($event, 1)" type="text" placeholder="Type a country.." ref="field1" required>
               <div class="invalid-tooltip ms-lg-4">
                 {{ invalid_country }}
               </div> 
             </div> 
             <!-- list -->
             <ul class="autocomplete-list position-absolute rounded border bg-body py-2 px-0 shadow w-100 m-0" v-if="search.searching && search.field === 1">
-              <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" :id="country.code_2" @click="field1 = selectCountry(country)">{{ country.name_en }}</li>
+              <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" :id="country.code_2" @click="field1 = selectCountry(country)">
+                <img class="img-fluid rounded me-2 h-100" :src="`/images/flags/${country.code_2}.svg`" width="32" :alt="`Flag of ${country.name_en}`" :title="`Flag of ${country.name_en}`"/>{{ country.name_en }}</li>
               <li class="py-2 px-3" v-if="!search.arr.length"><i>Not results found</i></li>
             </ul>
           </div>
@@ -30,14 +31,15 @@ import { countries } from "~/assets/data/countries.json";
           <div class="position-relative">
             <div class="input-group has-validation">
               <span class="input-group-text bg-body"><FontAwesomeIcon :icon="faLocationDot" width="16" height="16"/></span>
-              <input class="form-control form-control-lg bg-body" :value="field2.name_en" @input="field2.name_en = $event.target.value" @keyup="searchBox($event, 2)" type="text" placeholder="Type a country.." ref="field2" required>
+              <input class="form-control form-control-lg bg-body text-dark-emphasis" :value="field2.name_en" @input="field2.name_en = $event.target.value" @keyup="searchBox($event, 2)" type="text" placeholder="Type a country.." ref="field2" required>
               <div class="invalid-tooltip ms-lg-4">
                 {{ invalid_country }}
               </div> 
             </div> 
             <!-- list -->
             <ul class="autocomplete-list position-absolute rounded border bg-body py-2 px-0 shadow w-100 m-0" v-if="search.searching && search.field === 2">
-              <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" :id="country.code_2" @click="field2 = selectCountry(country)">{{ country.name_en }}</li>
+              <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" :id="country.code_2" @click="field2 = selectCountry(country)">
+                <img class="img-fluid rounded me-2 h-100" :src="`/images/flags/${country.code_2}.svg`" width="32" :alt="`Flag of ${country.name_en}`" :title="`Flag of ${country.name_en}`"/>{{ country.name_en }}</li>
               <li class="py-2 px-3" v-if="!search.arr.length">Not results found</li>
             </ul>
           </div>

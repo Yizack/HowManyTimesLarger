@@ -9,7 +9,8 @@ definePageMeta({ layout: "main" });
     <div class="container my-4">
       <nav :style="`--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);`" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><NuxtLink to="/">Compare</NuxtLink></li>
+          <li class="breadcrumb-item"><NuxtLink to="/">App</NuxtLink></li>
+          <li class="breadcrumb-item">Compare</li>
           <li class="breadcrumb-item active" v-for="country in params" :key="country.code_2">{{ country.name_en }}</li>
         </ol>
       </nav>
@@ -37,13 +38,13 @@ definePageMeta({ layout: "main" });
             <p class="display-5">
               <b>{{ params[0].name_en }}</b> is
               <template v-if="compared.diff > 0">
-                about <b class="text-primary-emphasis">{{ fixed(compared.diff) }}</b> times
+                about <b class="text-primary-emphasis">{{ fixed(compared.diff, 2) }}</b> times
               </template>
               <b class="text-uppercase text-primary-emphasis">{{ compared.word }}</b>
               {{ compared.func }}
               <b>{{ params[1].name_en }}</b>
             </p>
-            <p class="m-0 text-secondary-emphasis">{{ params[0].name_en }} total area is ~{{ fixed(params[0].km2) }} km², while {{ params[1].name_en }} is ~{{ fixed(params[1].km2) }} km², making Panama {{ percent }}% the size of United States.</p>
+            <p class="m-0 text-secondary-emphasis">{{ params[0].name_en }} total area is ~{{ fixed(params[0].km2) }} km², while {{ params[1].name_en }} is ~{{ fixed(params[1].km2) }} km², making {{ params[0].name_en }} {{ percent }}% the size of {{ params[1].name_en }}.</p>
           </div>
         </div>
       </div>

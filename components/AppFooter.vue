@@ -9,7 +9,7 @@ import siteInfo from "~/siteInfo.js";
         <div class="col-12">
           <!--<img alt="Image" src="" class="mb-4">-->
           <p>
-            © 2019 {{ siteInfo.name }}
+            © {{ new Date().getFullYear() }} {{ siteInfo.name }}
           </p>
         </div>
       </div>

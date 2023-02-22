@@ -14,12 +14,15 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">{{ siteInfo.name }}</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav nav-pills ms-auto">
             <li class="nav-item">
               <NuxtLink class="nav-link rounded-pill px-lg-3 text-center text-uppercase" to="/">Home</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink class="nav-link rounded-pill px-lg-3 text-center text-uppercase" href="/countries/">Countries</NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink class="nav-link rounded-pill px-lg-3 text-center text-uppercase" href="/game/">Game</NuxtLink>

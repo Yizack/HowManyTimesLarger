@@ -17,7 +17,7 @@ definePageMeta({ layout: "main" });
         <div class="row"> 
           <div class="col-lg-6 mx-auto my-5" v-for="country in params" :key="country.code_2">
             <div>
-              <img class="img-fluid rounded h-100" :src="`/images/flags/${country.code_2}.svg`" width="75" :alt="`Flag of ${country.name_en}`"/>
+              <img class="img-fluid rounded" :src="`/images/flags/${country.code_2}.svg`" width="72" :alt="`Flag of ${country.name_en}`"/>
             </div>
             <h1>{{ country.name_en }}</h1>
             <img class="img-fluid shape" :src="`/images/shapes/${country.code_2}.svg`" width="200" :alt="`Shape of ${country.name_en}`"/>

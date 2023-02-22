@@ -39,7 +39,7 @@ import { countries } from "~/assets/data/countries.json";
             <!-- list -->
             <ul class="autocomplete-list position-absolute rounded border bg-body py-2 px-0 shadow w-100 m-0" v-if="search.searching && search.field === 2">
               <li role="button" class="py-2 px-3" v-for="country in search.arr" :key="country.code_2" :id="country.code_2" @click="field2 = selectCountry(country)">
-                <img class="img-fluid rounded me-2 h-100" :src="`/images/flags/${country.code_2}.svg`" width="32" :alt="`Flag of ${country.name_en}`" :title="`Flag of ${country.name_en}`"/>{{ country.name_en }}</li>
+                <img class="img-fluid rounded-1 me-2 h-100" :src="`/images/flags/${country.code_2}.svg`" width="32" :alt="`Flag of ${country.name_en}`" :title="`Flag of ${country.name_en}`"/>{{ country.name_en }}</li>
               <li class="py-2 px-3" v-if="!search.arr.length">Not results found</li>
             </ul>
           </div>

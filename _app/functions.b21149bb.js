@@ -1,1 +1,0 @@
-const e=(i=0,f=0)=>Number(i).toLocaleString(void 0,{minimumFractionDigits:f,maximumFractionDigits:f}),t=(i,f)=>i>f?{diff:i/f,word:"larger",func:"than"}:i<f?{diff:f/i,word:"smaller",func:"than"}:{diff:0,word:"equal",func:"to"};export{t as c,e as f};

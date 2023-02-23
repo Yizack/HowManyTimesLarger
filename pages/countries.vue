@@ -13,7 +13,7 @@ definePageMeta({ layout: "main" });
       </nav>
       <div class="row g-4">
         <div v-for="country in countries" :key="country.code_2" class="col-sm-6 col-lg-5 col-xl-4">
-          <div class="row g-0 bg-body-tertiary position-relative h-100 rounded border">
+          <div class="row g-0 bg-body-tertiary position-relative h-100 rounded border" role="button" data-bs-toggle="modal" data-bs-target="#try" @click="updateCurrent(country)">
             <div class="col-5 p-3 p-md-4">
               <img class="w-100 mb-3 rounded" :src="`/images/flags/${country.code_2}.svg`" alt="...">
               <img class="w-100 shape" :src="`/images/shapes/${country.code_2}.svg`" alt="...">
@@ -36,6 +36,23 @@ definePageMeta({ layout: "main" });
       </div>
     </div>
   </section>
+  <div id="try" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Compare {{ current.name_en }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div v-for="(country, index) in others" :key="index" class="col-md-6" data-bs-dismiss="modal">
+              <CountryVS :vs="[current, country]" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -43,8 +60,19 @@ export default {
   name: "CountriesPage",
   data () {
     return {
-      countries
+      countries,
+      current: {},
+      others: []
     };
+  },
+  methods: {
+    updateCurrent (country) {
+      this.current = country;
+      this.others = [];
+      for (let i = 0; i < 6; i++) {
+        this.others.push(randomFrom(countries));
+      }
+    }
   }
 };
 </script>

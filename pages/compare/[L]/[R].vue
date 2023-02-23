@@ -1,5 +1,4 @@
 <script setup>
-import { countries } from "~/public/data/countries.json";
 definePageMeta({ layout: "main" });
 </script>
 
@@ -86,6 +85,14 @@ export default {
     for (let i = 0; i < 6; i++) {
       this.others.push(randomFrom(countries));
     }
+
+    useHead({
+      title: `${this.params[0].name_en} vs ${this.params[1].name_en}`,
+      meta: [],
+      link: [
+        { rel: "canonical", href: `${siteInfo.url}/compare/${this.params[0].code_2}/${this.params[1].code_2}/` }
+      ]
+    });
   }
 };
 </script>

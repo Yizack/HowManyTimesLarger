@@ -1,6 +1,7 @@
 import siteInfo from "~/siteInfo.js";
+import { countries } from "~/assets/data/countries.json";
 
-export { siteInfo };
+export { siteInfo, countries };
 
 export const fixed = (n = 0, d = 0) => {
   return Number(n).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });

@@ -1,7 +1,3 @@
-<script setup>
-import { countries } from "~/public/data/countries.json";
-</script>
-
 <template>
   <div class="row g-4">
     <div v-for="(country, index) in tryCountries" :key="index" class="col-6 col-md-4 col-lg-3 col-xl-2">
@@ -12,7 +8,7 @@ import { countries } from "~/public/data/countries.json";
 
 <script>
 export default {
-  name: "TryBoxes",
+  name: "QuickBoxes",
   data () {
     return {
       countries,
@@ -33,7 +29,7 @@ export default {
       tryCountries: []
     };
   },
-  mounted () {
+  created () {
     this.getCountries();
   },
   methods: {

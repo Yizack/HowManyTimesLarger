@@ -1,7 +1,6 @@
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faMagnifyingGlass, faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { countries } from "~/public/data/countries.json";
 </script>
 
 <template>

@@ -1,5 +1,4 @@
 <script setup>
-import { countries } from "~/public/data/countries.json";
 definePageMeta({ layout: "main" });
 </script>
 

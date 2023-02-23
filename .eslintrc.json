@@ -24,7 +24,8 @@
     "siteInfo": "readonly",
     "fixed": "readonly",
     "randomFrom": "readonly",
-    "compareNumbers": "readonly"
+    "compareNumbers": "readonly",
+    "countries": "readonly"
   },
   "plugins": [
     "vue"

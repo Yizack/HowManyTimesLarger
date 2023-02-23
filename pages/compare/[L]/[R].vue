@@ -47,7 +47,7 @@ definePageMeta({ layout: "main" });
         </div>
       </div>
       <div class="border bg-body-tertiary p-4 rounded text-center">
-        <p class="display-6 text-dark-emphasis">Compare <b>{{ params[0].name_en }}</b> with other countries</p>
+        <p class="display-6 text-dark-emphasis">Compare <b>{{ params[0].name_en }}</b> with other countries or territories</p>
         <div class="row g-4">
           <div v-for="(country, index) in others" :key="index" class="col-6 col-md-4 col-lg-3 col-xl-2">
             <CountryVS :vs="[params[0], country]" />

@@ -1,3 +1,13 @@
+import { countries } from "./assets/data/countries.json";
+
+const routes = ["/"];
+
+countries.forEach((left) => {
+  countries.forEach((right) => {
+    routes.push(`/compare/${left.code_2}/${right.code_2}/`);
+  });
+});
+
 export default {
   app: {
     rootId: "app",
@@ -25,7 +35,9 @@ export default {
     "~/assets/css/main.css"
   ],
   nitro: {
-    crawlLinks: true,
-    routes: ["/"]
+    prerender: {
+      crawlLinks: true,
+      routes
+    }
   }
 };

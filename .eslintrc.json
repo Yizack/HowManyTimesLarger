@@ -21,7 +21,6 @@
     "defineNuxtPlugin": "readonly",
     "useNuxtApp": "readonly",
     "normalize": "readonly",
-    "countries": "readonly",
     "siteInfo": "readonly",
     "fixed": "readonly",
     "randomFrom": "readonly",

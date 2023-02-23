@@ -1,3 +1,7 @@
+<script setup>
+import { countries } from "~/public/data/countries.json";
+</script>
+
 <template>
   <div class="row g-4">
     <div v-for="(country, index) in tryCountries" :key="index" class="col-6 col-md-4 col-lg-3 col-xl-2">
@@ -11,6 +15,7 @@ export default {
   name: "TryBoxes",
   data () {
     return {
+      countries,
       codeCountries: [
         ["US", "CA"],
         ["BR", "AR"],

@@ -1,4 +1,5 @@
 <script setup>
+import { countries } from "~/public/data/countries.json";
 definePageMeta({ layout: "main" });
 </script>
 
@@ -63,6 +64,7 @@ export default {
   name: "CountryCompare",
   data () {
     return {
+      countries,
       params: [
         countries.find(country => country.code_2 === this.$route.params.L.toLocaleUpperCase()),
         countries.find(country => country.code_2 === this.$route.params.R.toLocaleUpperCase())

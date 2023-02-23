@@ -1,4 +1,5 @@
 <script setup>
+import { countries } from "~/public/data/countries.json";
 definePageMeta({ layout: "main" });
 </script>
 
@@ -40,6 +41,11 @@ definePageMeta({ layout: "main" });
 
 <script>
 export default {
-  name: "CountriesPage"
+  name: "CountriesPage",
+  data () {
+    return {
+      countries
+    };
+  }
 };
 </script>

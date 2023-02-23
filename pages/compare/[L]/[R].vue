@@ -64,8 +64,8 @@ export default {
   data () {
     return {
       params: [
-        countries.find(country => country.code_2 === this.$route.params.R.toLocaleUpperCase()),
-        countries.find(country => country.code_2 === this.$route.params.L.toLocaleUpperCase())
+        countries.find(country => country.code_2 === this.$route.params.L.toLocaleUpperCase()),
+        countries.find(country => country.code_2 === this.$route.params.R.toLocaleUpperCase())
       ],
       compared: {},
       others: []

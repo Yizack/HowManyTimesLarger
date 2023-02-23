@@ -1,8 +1,6 @@
 <script setup>
-import siteInfo from "~/siteInfo.js";
 definePageMeta({ layout: "main" });
 </script>
-
 
 <template>
   <!-- Header -->
@@ -11,20 +9,21 @@ definePageMeta({ layout: "main" });
       <div class="row py-sm-5">
         <div class="col-xl-8 m-auto text-center text-dark-emphasis mb-5">
           <h6 class="fw-normal mb-3">{{ siteInfo.description }}</h6>
-          <h1 class="display-4 mb-0">Let's Find Out
+          <h1 class="display-4 mb-0">
+            Let's Find Out
             <span class="d-block">{{ siteInfo.name }}</span>
           </h1>
         </div>
         <!-- CompareBox -->
-        <CompareBox/>
+        <CompareBox />
       </div>
     </div>
   </section>
   <!-- Try -->
-  <section class="mb-5">
+  <section class="mb-4 mb-sm-5">
     <div class="container">
-      <!-- TryBoxes -->
-      <TryBoxes/>
+      <!-- QuickBoxes -->
+      <QuickBoxes />
     </div>
   </section>
 </template>

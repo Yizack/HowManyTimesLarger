@@ -6,7 +6,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:vue/vue3-essential"
+    "plugin:vue/vue3-essential",
+    "@nuxtjs"
   ],
   "overrides": [
   ],
@@ -19,8 +20,12 @@
     "useHead": "readonly",
     "defineNuxtPlugin": "readonly",
     "useNuxtApp": "readonly",
-    "MediaElementPlayer": "readonly",
-    "Glide": "readonly"
+    "normalize": "readonly",
+    "countries": "readonly",
+    "siteInfo": "readonly",
+    "fixed": "readonly",
+    "randomFrom": "readonly",
+    "compareNumbers": "readonly"
   },
   "plugins": [
     "vue"
@@ -49,7 +54,19 @@
         "after": true
       }
     ],
+    "brace-style": ["error", "stroustrup"],
     "no-multi-spaces": "error",
-    "space-before-blocks": "error"
+    "space-before-blocks": "error",
+    "vue/first-attribute-linebreak": ["error", {
+      "singleline": "ignore",
+      "multiline": "ignore"
+    }],
+    "vue/max-attributes-per-line": ["error", 
+      {
+        "singleline": 100
+      }
+    ],
+    "vue/singleline-html-element-content-newline": ["off"],
+    "vue/no-multiple-template-root": ["off"]
   }
 }

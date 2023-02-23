@@ -1,6 +1,4 @@
 <script setup>
-import { countries } from "~/assets/data/countries.json";
-import { fixed } from "~/assets/js/functions.js";
 definePageMeta({ layout: "main" });
 </script>
 
@@ -9,16 +7,16 @@ definePageMeta({ layout: "main" });
     <div class="container">
       <nav :style="`--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);`" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><NuxtLink to="/">App</NuxtLink></li>
-          <li class="breadcrumb-item active">Countries</li>
+          <li class="breadcrumb-item"><NuxtLink to="/"><b>App</b></NuxtLink></li>
+          <li class="breadcrumb-item">Countries</li>
         </ol>
       </nav>
       <div class="row g-4">
-        <div class="col-sm-6 col-lg-5 col-xl-4" v-for="country in countries" :key="country.code_2">
-          <div class="row g-0 bg-body-secondary position-relative h-100 rounded border">
+        <div v-for="country in countries" :key="country.code_2" class="col-sm-6 col-lg-5 col-xl-4">
+          <div class="row g-0 bg-body-tertiary position-relative h-100 rounded border">
             <div class="col-5 p-3 p-md-4">
-              <img class="w-100 mb-3" :src="`/images/flags/${country.code_2}.svg`" alt="...">
-              <img  class="w-100 shape" :src="`/images/shapes/${country.code_2}.svg`"  alt="...">
+              <img class="w-100 mb-3 rounded" :src="`/images/flags/${country.code_2}.svg`" alt="...">
+              <img class="w-100 shape" :src="`/images/shapes/${country.code_2}.svg`" alt="...">
             </div>
             <div class="col-7 p-3 ps-md-2">
               <h5 class="m-0">{{ country.name_en }}</h5>

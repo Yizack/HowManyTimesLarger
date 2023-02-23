@@ -1,7 +1,7 @@
 <template>
-  <AppNavbar/>
-  <slot/>
-  <AppFooter/>
+  <NavbarComp />
+  <slot />
+  <FooterComp />
 </template>
 
 <script>

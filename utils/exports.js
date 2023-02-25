@@ -11,8 +11,8 @@ export const normalize = (string) => {
   return string.normalize("NFD").replace(/[\u0300-\u036F]/g, "");
 };
 
-export const randomFrom = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
+export const randomCountry = () => {
+  return countries[Math.floor(Math.random() * countries.length)];
 };
 
 export const compareNumbers = (n1, n2) => {

@@ -23,7 +23,7 @@
     "normalize": "readonly",
     "siteInfo": "readonly",
     "fixed": "readonly",
-    "randomFrom": "readonly",
+    "randomCountry": "readonly",
     "compareNumbers": "readonly",
     "countries": "readonly"
   },

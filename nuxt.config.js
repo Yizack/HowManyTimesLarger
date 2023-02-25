@@ -34,10 +34,12 @@ export default {
     "bootstrap/dist/css/bootstrap.min.css",
     "~/assets/css/main.css"
   ],
+  experimental: {
+    payloadExtraction: false
+  },
   nitro: {
     prerender: {
-      crawlLinks: true,
-      routes
+      crawlLinks: false
     }
   }
 };

@@ -49,7 +49,7 @@ definePageMeta({ layout: "main" });
       <div class="border bg-body-tertiary p-4 rounded text-center">
         <p class="display-6 text-dark-emphasis">Compare <b>{{ params[0].name_en }}</b> with other countries or territories</p>
         <div class="row g-4">
-          <div v-for="(country, index) in others" :key="index" class="col-6 col-md-4 col-lg-3 col-xl-2">
+          <div v-for="country in randomCountries" :key="country.code_2" class="col-6 col-md-4 col-lg-3 col-xl-2">
             <CountryVS :vs="[params[0], country]" />
           </div>
         </div>
@@ -63,13 +63,12 @@ export default {
   name: "CountryCompare",
   data () {
     return {
-      countries,
       params: [
         countries.find(country => country.code_2 === this.$route.params.L.toLocaleUpperCase()),
         countries.find(country => country.code_2 === this.$route.params.R.toLocaleUpperCase())
       ],
       compared: {},
-      others: []
+      randomCountries: []
     };
   },
   computed: {
@@ -78,14 +77,14 @@ export default {
       return p < 1 ? fixed(p, 2) : fixed(p);
     }
   },
-  created () {
+  mounted () {
     this.params[0].mi2 = this.params[0].km2 / 2.59;
     this.params[1].mi2 = this.params[1].km2 / 2.59;
     this.compared = compareNumbers(this.params[0].km2, this.params[1].km2);
+    this.randomCountries = [];
     for (let i = 0; i < 6; i++) {
-      this.others.push(randomFrom(countries));
+      this.randomCountries.push(randomCountry());
     }
-
     useHead({
       title: `${this.params[0].name_en} vs ${this.params[1].name_en}`,
       meta: [],

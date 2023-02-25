@@ -4,15 +4,21 @@ import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
 </script>
 
 <template>
-  <a class="card card-body h-100 align-items-center justify-content-center border text-decoration-none" :href="`/compare/${vs[0].code_2}/${vs[1].code_2}/`">
+  <NuxtLink class="card card-body h-100 align-items-center justify-content-center border text-decoration-none" :to="`/compare/${vs[0].code_2}/${vs[1].code_2}/`">
     <span class="mb-2 text-dark-emphasis"><small><b>{{ vs[0].name_en }}</b></small></span>
-    <div class="d-flex align-items-center">
-      <img class="img-fluid rounded-1" :src="`/images/flags/${vs[0].code_2}.svg`" width="40">
-      <span class="mx-3 text-dark-emphasis align-self-center"><FontAwesomeIcon :icon="faArrowRightArrowLeft" /></span>
-      <img class="img-fluid rounded-1" :src="`/images/flags/${vs[1].code_2}.svg`" width="40">
+    <div class="row">
+      <div class="col-5">
+        <img class="img-fluid rounded-1" :src="`/images/flags/${vs[0].code_2}.svg`" width="50">
+      </div>
+      <div class="col-2 p-0 text-center">
+        <span class="text-dark-emphasis align-self-center"><FontAwesomeIcon :icon="faArrowRightArrowLeft" /></span>
+      </div>
+      <div class="col-5">
+        <img class="img-fluid rounded-1" :src="`/images/flags/${vs[1].code_2}.svg`" width="50">
+      </div>
     </div>
     <span class="mt-2 text-dark-emphasis"><small><b>{{ vs[1].name_en }}</b></small></span>
-  </a>
+  </NuxtLink>
 </template>
 
 <script>

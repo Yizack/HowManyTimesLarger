@@ -45,7 +45,7 @@ definePageMeta({ layout: "main" });
         </div>
         <div class="modal-body">
           <div class="row g-4">
-            <div v-for="(country, index) in others" :key="index" class="col-md-6" data-bs-dismiss="modal">
+            <div v-for="country in randomCountries" :key="country.code_2" class="col-md-6" data-bs-dismiss="modal">
               <CountryVS :vs="[current, country]" />
             </div>
           </div>
@@ -60,17 +60,16 @@ export default {
   name: "CountriesPage",
   data () {
     return {
-      countries,
       current: {},
-      others: []
+      randomCountries: []
     };
   },
   methods: {
     updateCurrent (country) {
       this.current = country;
-      this.others = [];
+      this.randomCountries = [];
       for (let i = 0; i < 6; i++) {
-        this.others.push(randomFrom(countries));
+        this.randomCountries.push(randomCountry());
       }
     }
   }

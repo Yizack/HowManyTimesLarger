@@ -89,3 +89,7 @@
   border-color: var(--primary);
   box-shadow: 0 0 0 0.25rem rgb(81 195 147 / 25%);
 }
+
+.nuxt-loading-indicator {
+  background: repeating-linear-gradient(to right, var(--primary) 0%, var(--primary-disabled) 50%,var(--primary-hover) 100%)!important;
+}

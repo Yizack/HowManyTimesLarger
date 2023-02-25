@@ -29,6 +29,15 @@
   .mt-n4 {
     margin-top: -4rem !important;
   }
+
+  .score-bar {
+    top: unset!important;
+  }
+}
+
+.score-bar {
+  top: 0;
+  z-index: -1;
 }
 
 .breadcrumb-item a {
@@ -36,7 +45,6 @@
 }
 
 [data-bs-theme="dark"] {
-  --bs-body-color-rgb: 0,0,0;
   --bs-body-bg: rgb(23, 26, 30);
   --bs-body-bg-rgb: 23, 26, 30;
   --bs-dark-rgb: 18, 21, 25;

@@ -83,7 +83,7 @@ export default {
     this.compared = compareNumbers(this.params[0].km2, this.params[1].km2);
     this.randomCountries = [];
     for (let i = 0; i < 6; i++) {
-      this.randomCountries.push(randomCountry());
+      this.randomCountries.push(randomCountry(this.params[0].code_2, this.params[1].code_2));
     }
     useHead({
       title: `${this.params[0].name_en} vs ${this.params[1].name_en}`,

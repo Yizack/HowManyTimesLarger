@@ -1,6 +1,5 @@
 <script setup>
 import { faMagnifyingGlass, faGlobe, faEarthAmericas, faEarthEurope, faEarthAfrica, faEarthAsia, faEarthOceania, faSnowflake } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 definePageMeta({ layout: "main" });
 </script>
 
@@ -82,7 +81,6 @@ definePageMeta({ layout: "main" });
 <script>
 export default {
   name: "CountriesPage",
-  components: { FontAwesomeIcon },
   data () {
     return {
       current: {},
@@ -116,7 +114,7 @@ export default {
       this.current = country;
       this.randomCountries = [];
       for (let i = 0; i < 6; i++) {
-        this.randomCountries.push(randomCountry());
+        this.randomCountries.push(randomCountry(country.code_2));
       }
     }
   }

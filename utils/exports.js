@@ -11,8 +11,9 @@ export const normalize = (string) => {
   return string.normalize("NFD").replace(/[\u0300-\u036F]/g, "");
 };
 
-export const randomCountry = () => {
-  return countries[Math.floor(Math.random() * countries.length)];
+export const randomCountry = (...code) => {
+  const filtered = countries.filter(country => !code.includes(country.code_2));
+  return filtered[Math.floor(Math.random() * filtered.length)];
 };
 
 export const filterCountries = (input, continent = "All") => {

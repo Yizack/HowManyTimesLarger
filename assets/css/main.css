@@ -51,9 +51,11 @@
   --bs-secondary-bg-rgb: 25, 28, 31;
   --bs-tertiary-bg-rgb: 18, 21, 25;
   --primary: #72c5a2;
+  --primary-rgb: 114, 197, 162;
   --primary-hover: #51c393;
   --primary-disabled: #578b75;
   --bs-primary-text: #ECB390;
+  --bs-primary-text-rgb: 236, 179, 144;
   --bs-link-color: #51c393;
   --bs-link-color-rgb: 81, 195, 147;
   --bs-link-hover-color: #72c5a2;
@@ -63,13 +65,21 @@
 [data-bs-theme="light"] {
   --bs-body-bg: #f2f1f1;
   --primary: #51c393;
+  --primary-rgb: 81, 195, 147;
   --primary-hover: #4eb68a;
   --primary-disabled: #578b75;
   --bs-primary-text: #d16625;
+  --bs-primary-text-rgb: 209, 102, 37;
   --bs-link-color: #4eb68a;
   --bs-link-color-rgb: 78, 182, 138;
   --bs-link-hover-color: #51c393;
   --bs-link-hover-color-rgb: 81, 195, 147;
+}
+
+* {
+  --bs-primary: var(--primary);
+  --bs-primary-rgb: var(--primary-rgb);
+  --bs-secondary-rgb: var(--bs-primary-text-rgb);
 }
 
 .btn-primary {

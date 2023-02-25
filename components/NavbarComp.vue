@@ -16,14 +16,8 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav nav-pills ms-auto">
-            <li class="nav-item" data-bs-dismiss="offcanvas">
-              <NuxtLink class="nav-link rounded-pill px-lg-3 text-center text-uppercase" to="/"><b>Home</b></NuxtLink>
-            </li>
-            <li class="nav-item" data-bs-dismiss="offcanvas">
-              <NuxtLink class="nav-link rounded-pill px-lg-3 text-center text-uppercase" to="/countries/"><b>Countries</b></NuxtLink>
-            </li>
-            <li class="nav-item" data-bs-dismiss="offcanvas">
-              <NuxtLink class="nav-link rounded-pill px-lg-3 text-center text-uppercase" to="/game/"><b>Game</b></NuxtLink>
+            <li v-for="(page, index) in siteInfo.pages" :key="index" class="nav-item" data-bs-dismiss="offcanvas">
+              <NuxtLink class="nav-link rounded-pill px-lg-3 text-center text-uppercase" :to="page.url"><b>{{ page.name }}</b></NuxtLink>
             </li>
             <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
               <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-dark-emphasis" />

@@ -25,7 +25,8 @@
     "fixed": "readonly",
     "randomCountry": "readonly",
     "compareNumbers": "readonly",
-    "countries": "readonly"
+    "countries": "readonly",
+    "closeModals": "readonly"
   },
   "plugins": [
     "vue"

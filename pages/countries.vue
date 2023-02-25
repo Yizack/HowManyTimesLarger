@@ -12,7 +12,7 @@ definePageMeta({ layout: "main" });
         </ol>
       </nav>
       <div class="row g-4">
-        <div v-for="country in countries" :key="country.code_2" class="col-sm-6 col-lg-5 col-xl-4">
+        <div v-for="country in countries" :key="country.code_2" class="col-sm-6 col-lg-6 col-xl-4">
           <div class="row g-0 bg-body-tertiary position-relative h-100 rounded border" role="button" data-bs-toggle="modal" data-bs-target="#try" @click="updateCurrent(country)">
             <div class="col-5 p-3 p-md-4">
               <img class="w-100 mb-3 rounded" :src="`/images/flags/${country.code_2}.svg`" alt="...">
@@ -36,17 +36,17 @@ definePageMeta({ layout: "main" });
       </div>
     </div>
   </section>
-  <div id="try" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div id="try" class="modal fade" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header bg-body-tertiary">
           <h5 class="modal-title">Compare {{ current.name_en }}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
         </div>
         <div class="modal-body">
           <div class="row g-4">
-            <div v-for="country in randomCountries" :key="country.code_2" class="col-md-6" data-bs-dismiss="modal">
-              <CountryVS :vs="[current, country]" />
+            <div v-for="country in randomCountries" :key="country.code_2" class="col-md-6">
+              <CountryVS class="bg-body-tertiary" :vs="[current, country]" />
             </div>
           </div>
         </div>
@@ -63,6 +63,9 @@ export default {
       current: {},
       randomCountries: []
     };
+  },
+  beforeUnmount () {
+    closeModals();
   },
   methods: {
     updateCurrent (country) {

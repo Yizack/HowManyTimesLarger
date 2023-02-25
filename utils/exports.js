@@ -15,6 +15,17 @@ export const randomCountry = () => {
   return countries[Math.floor(Math.random() * countries.length)];
 };
 
+export const filterCountries = (input, continent = "All") => {
+  return countries.filter((country) => {
+    const wordsMatch = normalize(String(input).toLocaleLowerCase()).split(" ").map(char => normalize(String(country.name_en).toLocaleLowerCase()).includes(char)).every(Boolean);
+    const continentMatch = continent === "All" || country.continent_en === continent;
+    if (wordsMatch && continentMatch) {
+      return country;
+    }
+    return false;
+  });
+};
+
 export const compareNumbers = (n1, n2) => {
   if (n1 > n2) {
     const diff = n1 / n2;

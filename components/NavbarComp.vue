@@ -1,5 +1,4 @@
 <script setup>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 </script>
 

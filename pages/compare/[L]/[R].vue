@@ -28,7 +28,7 @@ definePageMeta({ layout: "main" });
       <div class="row m-0 p-0 mb-3">
         <div class="col-lg-12 order-2 order-lg-1 m-0 p-0">
           <div class="mt-n4">
-            <CompareBox :vs="[params[0], params[1]]" />
+            <CompareForm :vs="[params[0], params[1]]" />
           </div>
         </div>
         <div class="col-lg-12 order-1 order-lg-2 m-0 p-0 text-dark-emphasis text-center">

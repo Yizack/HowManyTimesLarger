@@ -1,5 +1,4 @@
 <script setup>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faMagnifyingGlass, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 </script>
 
@@ -12,7 +11,7 @@ import { faMagnifyingGlass, faLocationDot } from "@fortawesome/free-solid-svg-ic
           <div class="position-relative">
             <div class="input-group has-validation">
               <span class="input-group-text bg-body"><FontAwesomeIcon :icon="faLocationDot" width="16" height="16" /></span>
-              <input ref="field1" class="form-control form-control-lg bg-body text-dark-emphasis" :value="field1.name_en" type="text" placeholder="Type a country.." required @input="field1.name_en = $event.target.value" @keyup="searchBox($event, 1)">
+              <input ref="field1" class="form-control form-control-lg bg-body text-dark-emphasis" :value="field1.name_en" type="text" placeholder="Type a country..." required @input="field1.name_en = $event.target.value" @keyup="searchBox($event, 1)">
               <div class="invalid-tooltip ms-lg-4">
                 {{ invalid_country }}
               </div>
@@ -31,7 +30,7 @@ import { faMagnifyingGlass, faLocationDot } from "@fortawesome/free-solid-svg-ic
           <div class="position-relative">
             <div class="input-group has-validation">
               <span class="input-group-text bg-body"><FontAwesomeIcon :icon="faLocationDot" width="16" height="16" /></span>
-              <input ref="field2" class="form-control form-control-lg bg-body text-dark-emphasis" :value="field2.name_en" type="text" placeholder="Type a country.." required @input="field2.name_en = $event.target.value" @keyup="searchBox($event, 2)">
+              <input ref="field2" class="form-control form-control-lg bg-body text-dark-emphasis" :value="field2.name_en" type="text" placeholder="Type a country..." required @input="field2.name_en = $event.target.value" @keyup="searchBox($event, 2)">
               <div class="invalid-tooltip ms-lg-4">
                 {{ invalid_country }}
               </div>
@@ -98,13 +97,7 @@ export default {
         this.search.searching = false;
       }
 
-      this.search.arr = countries.filter((country) => {
-        const wordsMatch = normalize(String(input).toLocaleLowerCase()).split(" ").map(char => normalize(String(country.name_en).toLocaleLowerCase()).includes(char)).every(Boolean);
-        if (wordsMatch) {
-          return country;
-        }
-        return false;
-      });
+      this.search.arr = filterCountries(input);
     },
     selectCountry (country) {
       this.search.searching = false;

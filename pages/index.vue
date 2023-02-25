@@ -14,8 +14,8 @@ definePageMeta({ layout: "main" });
             <span class="d-block">{{ siteInfo.name }}</span>
           </h1>
         </div>
-        <!-- CompareBox -->
-        <CompareBox />
+        <!-- CompareForm -->
+        <CompareForm />
       </div>
     </div>
   </section>

@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper.c27b6911.js";import{o,a}from"./entry.b103b572.js";const t={name:"GamePage"};function r(c,n,s,m,p,_){return o(),a("div")}const d=e(t,[["render",r]]);export{d as default};

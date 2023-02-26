@@ -65,3 +65,16 @@ export const closeModals = () => {
     });
   }
 };
+
+export const tweenNumber = async (v, end, duration) => {
+  while (v.tweened < end) {
+    const set = end / (60 * duration);
+    if (v.tweened + set > end) {
+      v.tweened = end;
+    }
+    else {
+      v.tweened += set;
+    }
+    await new Promise(resolve => setTimeout(resolve, duration * 1000 / 60));
+  }
+};

@@ -29,15 +29,6 @@
   .mt-n4 {
     margin-top: -4rem !important;
   }
-
-  .score-bar {
-    top: unset!important;
-  }
-}
-
-.score-bar {
-  top: 0;
-  z-index: -1;
 }
 
 .breadcrumb-item a {

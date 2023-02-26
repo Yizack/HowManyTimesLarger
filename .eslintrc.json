@@ -27,7 +27,8 @@
     "compareNumbers": "readonly",
     "countries": "readonly",
     "closeModals": "readonly",
-    "filterCountries": "readonly"
+    "filterCountries": "readonly",
+    "tweenNumber": "readonly"
   },
   "plugins": [
     "vue"

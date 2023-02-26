@@ -19,7 +19,7 @@ definePageMeta({ layout: "main" });
               <img class="img-fluid rounded-1" :src="`/images/flags/${country.code_2}.svg`" width="72" :alt="`Flag of ${country.name_en}`">
             </div>
             <h1>{{ country.name_en }}</h1>
-            <img class="img-fluid shape" :src="`/images/shapes/${country.code_2}.svg`" width="200" :alt="`Shape of ${country.name_en}`">
+            <img class=" shape" :src="`/images/shapes/${country.code_2}.svg`" width="200" height="200" :alt="`Shape of ${country.name_en}`">
             <p class="display-3 m-0"><b>~{{ fixed(country.km2) }} km²</b></p>
             <p class="display-6 m-0 text-primary-emphasis">(~{{ fixed(country.mi2) }} mi²)</p>
           </div>

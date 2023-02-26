@@ -3,8 +3,8 @@ import { faCaretUp, faCaretDown, faCheck, faTimes } from "@fortawesome/free-soli
 </script>
 
 <template>
-  <div class="container-fluid">
-    <div v-if="loaded && !loser" class="game vh-100 position-relative p-lg-3 pt-5 pb-lg-5 pb-5">
+  <div class="container-fluid vh-100 position-relative">
+    <div v-if="loaded && !loser" class="game h-100 p-lg-3 pt-5 pb-lg-5 pb-5">
       <div class="row h-100 position-relative">
         <Transition name="fade">
           <div v-if="animateElements" class="col-lg-6 option pb-2 pb-lg-0">
@@ -57,7 +57,7 @@ import { faCaretUp, faCaretDown, faCheck, faTimes } from "@fortawesome/free-soli
           </Transition>
         </div>
       </div>
-      <div class="position-absolute score-bar start-0 d-flex justify-content-between w-100 px-lg-3">
+      <div class="position-absolute score-bar start-0 d-flex justify-content-between w-100 px-3">
         <div class="text-center">
           <h5 class="text-dark-emphasis">High Score: <span class="text-primary-emphasis">{{ highscore }}</span></h5>
         </div>
@@ -67,7 +67,7 @@ import { faCaretUp, faCaretDown, faCheck, faTimes } from "@fortawesome/free-soli
       </div>
     </div>
     <Transition name="fade">
-      <div v-if="loser" class="position-absolute start-50 top-50 translate-middle w-100">
+      <div v-if="loser" class="position-absolute start-50 top-50 translate-middle w-100 p-2 p-lg-0">
         <div class="text-center text-dark-emphasis container rounded border shadow py-5">
           <h1 class="display-1"><b>Game Over</b></h1>
           <h2>You Scored: <span class="text-primary-emphasis">{{ score }}</span></h2>
@@ -79,7 +79,7 @@ import { faCaretUp, faCaretDown, faCheck, faTimes } from "@fortawesome/free-soli
         </div>
       </div>
     </Transition>
-    <div class="position-absolute start-50 translate-middle-x w-100 pages d-flex justify-content-center">
+    <div class="position-absolute start-50 translate-middle-x pages d-flex justify-content-center">
       <ul class="list-inline m-0">
         <template v-for="(page, index) in siteInfo.pages" :key="index">
           <li class="list-inline-item">

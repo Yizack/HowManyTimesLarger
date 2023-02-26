@@ -16,6 +16,10 @@
   .option {
     height: 100%!important;
   }
+  
+  .pages {
+    width: unset!important;
+  }
 }
 
 :root {
@@ -24,7 +28,6 @@
 
 .score-bar {
   top: 0.5rem;
-  z-index: -1;
 }
 
 .vs {
@@ -34,6 +37,7 @@
 
 .pages {
   bottom: 0.5rem;
+  width: 100%;
 }
 
 .option {

@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-12">
           <!--<img alt="Image" src="" class="mb-4">-->
-          <p class="m-0">© {{ new Date().getFullYear() }} {{ siteInfo.name }}</p>
+          <p class="m-0">© {{ new Date().getFullYear() }} <b>{{ siteInfo.name }}</b></p>
         </div>
       </div>
     </div>

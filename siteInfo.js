@@ -6,6 +6,6 @@ export default {
   pages: [
     { name: "Home", url: "/" },
     { name: "Countries", url: "/countries/" },
-    { name: "Game", url: "/game/" }
+    { name: "Game", url: "/game/", icon: true }
   ]
 };

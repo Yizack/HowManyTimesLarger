@@ -7,13 +7,13 @@ import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
     <span class="mb-2"><small><b>{{ vs[0].name_en }}</b></small></span>
     <div class="row align-items-center">
       <div class="col-5">
-        <img class="img-fluid rounded-1" :src="`/images/flags/${vs[0].code_2}.svg`" width="50">
+        <img class="img-fluid rounded-1 border flag" :src="`/images/flags/${vs[0].code_2}.svg`" width="50">
       </div>
       <div class="col-2 p-0 text-center">
         <span class="align-self-center"><FontAwesomeIcon :icon="faArrowRightArrowLeft" /></span>
       </div>
       <div class="col-5">
-        <img class="img-fluid rounded-1" :src="`/images/flags/${vs[1].code_2}.svg`" width="50">
+        <img class="img-fluid rounded-1 border flag" :src="`/images/flags/${vs[1].code_2}.svg`" width="50">
       </div>
     </div>
     <span class="mt-2"><small><b>{{ vs[1].name_en }}</b></small></span>

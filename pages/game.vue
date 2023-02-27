@@ -1,52 +1,58 @@
 <script setup>
-import { faCaretUp, faCaretDown, faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 </script>
 
 <template>
+  <!-- Game -->
   <div class="container-fluid vh-100 position-relative">
     <div v-if="loaded && !loser" class="game h-100 p-lg-3 pt-5 pb-lg-5 pb-5">
       <div class="row h-100 position-relative">
+        <!-- Country: Left + Fade Transition -->
         <Transition name="fade">
           <div v-if="animateElements" class="col-lg-6 option pb-2 pb-lg-0">
-            <div class="border border-primary rounded h-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow" :style="`background: url('/images/shapes/${left.code_2}.svg')  center center / cover no-repeat;`">
+            <div class="border border-primary border-3 rounded h-100 w-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow position-relative bg-body-secondary z-1">
+              <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="`/images/shapes/${left.code_2}.svg`">
+              <img class="img-fluid rounded-1 border border-1 bg-body" :src="`/images/flags/${left.code_2}.svg`" width="72" :alt="`Flag of ${left.name_en}`">
               <h1>“{{ left.name_en }}”</h1>
               <span>total area is approximately</span>
-              <div class="display-1 text-primary-emphasis"><b>{{ fixed(left.km2) }}</b> km²</div>
-              <div class="display-6 text-primary-emphasis">({{ fixed(left.km2 / 2.59) }}) mi²</div>
+              <div class="display-1 text-game"><b>{{ fixed(left.km2) }} km²</b></div>
+              <div class="display-6 text-game">({{ fixed(left.km2 / 2.59) }}) mi²</div>
             </div>
           </div>
         </Transition>
+        <!-- Country: Right + Fade Transition -->
         <Transition name="fade">
           <div v-if="animateElements" class="col-lg-6 option pt-2 pt-lg-0">
-            <div class="border border-secondary rounded h-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow" :style="`background: url('/images/shapes/${right.code_2}.svg')  center center / cover no-repeat;`">
+            <div class="border border-secondary border-3 rounded h-100 w-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow position-relative bg-body-secondary z-1">
+              <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="`/images/shapes/${right.code_2}.svg`">
+              <img class="img-fluid rounded-1 border border-1 bg-body" :src="`/images/flags/${right.code_2}.svg`" width="72" :alt="`Flag of ${right.name_en}`">
               <h1>“{{ right.name_en }}”</h1>
               <span>total area is{{ reveal ? " approximately" : null }}</span>
               <div v-if="!reveal" class="d-flex flex-column justify-content-center align-items-center">
                 <div class="text-uppercase">
                   <span class="btn btn-outline-light btn-lg rounded-pill my-2 ps-4 d-flex justify-content-between align-items-center" @click="selectOption(left.km2 <= right.km2)">
-                    <span>Larger</span>
+                    <b>Larger</b>
                     <FontAwesomeIcon :icon="faCaretUp" />
                   </span>
                   <span class="btn btn-outline-light btn-lg rounded-pill my-2 d-flex justify-content-between align-items-center" @click="selectOption(left.km2 >= right.km2)">
-                    <span>Smaller</span>
+                    <b>Smaller</b>
                     <FontAwesomeIcon :icon="faCaretDown" />
                   </span>
                 </div>
                 <span>than <span class="text-dark-emphasis"><b>{{ left.name_en }}</b></span></span>
               </div>
               <div v-else>
-                <div class="display-1 text-primary-emphasis"><b>{{ fixed(tweened) }}</b> km²</div>
-                <Transition name="fade">
-                  <div v-if="tweened == right.km2" class="display-6 text-primary-emphasis">({{ fixed(right.km2 / 2.59) }}) mi²</div>
-                </Transition>
+                <div class="display-1 text-primary-emphasis"><b>{{ fixed(tweened) }} km²</b></div>
+                <div class="display-6 text-primary-emphasis">({{ fixed(tweened / 2.59) }}) mi²</div>
               </div>
             </div>
           </div>
         </Transition>
-        <div class="position-absolute top-50 start-50 translate-middle vs p-0">
+        <!-- VS badge + Bounce Transition -->
+        <div class="position-absolute top-50 start-50 translate-middle vs p-0 z-1">
           <Transition name="bounce">
-            <div v-if="animateElements && !reveal" class="rounded-circle shadow bg-white h-100 w-100 position-relative">
-              <h1 class="text-dark m-0 position-absolute start-50 top-50 translate-middle"><b>VS</b></h1>
+            <div v-if="animateElements && !reveal" class="rounded-circle shadow vs-container h-100 w-100 position-relative">
+              <h1 class="m-0 position-absolute start-50 top-50 translate-middle"><b>VS</b></h1>
             </div>
             <div v-else-if="correctAnswer && reveal" class="rounded-circle shadow bg-primary h-100 w-100 position-relative">
               <FontAwesomeIcon :icon="faCheck" class="text-white m-0 position-absolute start-50 top-50 translate-middle w-100 h-50" />
@@ -57,18 +63,20 @@ import { faCaretUp, faCaretDown, faCheck, faTimes } from "@fortawesome/free-soli
           </Transition>
         </div>
       </div>
-      <div class="position-absolute score-bar start-0 d-flex justify-content-between w-100 px-3">
+      <!-- Score bar -->
+      <div class="position-absolute score-bar start-0 d-flex justify-content-between w-100 px-3 px-lg-4">
         <div class="text-center">
-          <h5 class="text-dark-emphasis">High Score: <span class="text-primary-emphasis">{{ highscore }}</span></h5>
+          <h5 class="text-dark-emphasis">High Score: <span class="text-primary-emphasis"><b>{{ highscore }}</b></span></h5>
         </div>
         <div class="text-center">
-          <h5 class="text-dark-emphasis">Score: <span class="text-primary-emphasis">{{ score }}</span></h5>
+          <h5 class="text-dark-emphasis">Score: <span class="text-primary-emphasis"><b>{{ score }}</b></span></h5>
         </div>
       </div>
     </div>
+    <!-- Game Over Screen + Fade Transition -->
     <Transition name="fade">
       <div v-if="loser" class="position-absolute start-50 top-50 translate-middle w-100 p-2 p-lg-0">
-        <div class="text-center text-dark-emphasis container rounded border shadow py-5">
+        <div class="text-center text-dark-emphasis container rounded border shadow py-5 col-lg-6">
           <h1 class="display-1"><b>Game Over</b></h1>
           <h2>You Scored: <span class="text-primary-emphasis">{{ score }}</span></h2>
           <h2>High Score: <span class="text-primary-emphasis">{{ highscore }}</span></h2>
@@ -79,16 +87,22 @@ import { faCaretUp, faCaretDown, faCheck, faTimes } from "@fortawesome/free-soli
         </div>
       </div>
     </Transition>
+    <!-- Pages -->
     <div class="position-absolute start-50 translate-middle-x pages d-flex justify-content-center">
       <ul class="list-inline m-0">
         <template v-for="(page, index) in siteInfo.pages" :key="index">
           <li class="list-inline-item">
             <a class="text-dark-emphasis" role="button" @click="openPage(page.url)">{{ page.name }}</a>
           </li>
-          <li v-if="index < siteInfo.pages.length - 1" class="list-inline-item">
+          <li class="list-inline-item">
             <span>•</span>
           </li>
         </template>
+        <li class="list-inline-item">
+          <Transition name="fade">
+            <a v-if="loaded" class="text-dark-emphasis" role="button" @click="toggleTheme()"><FontAwesomeIcon :icon="dark ? faMoon : faSun" /></a>
+          </Transition>
+        </li>
       </ul>
     </div>
   </div>
@@ -108,7 +122,8 @@ export default {
       highscore: 0,
       correctAnswer: false,
       reveal: false,
-      tweened: 0
+      tweened: 0,
+      dark: true
     };
   },
   watch: {
@@ -117,9 +132,15 @@ export default {
         const duration = 0.5;
         await tweenNumber(this, this.right.km2, duration);
       }
+    },
+    dark (bool) {
+      useHead({
+        bodyAttrs: { "data-bs-theme": bool ? "dark" : "light" }
+      });
     }
   },
   mounted () {
+    this.dark = JSON.parse(localStorage.getItem("dark"));
     this.left = randomCountry();
     this.right = randomCountry(this.left.code_2);
     this.highscore = localStorage.getItem("highscore") || 0;
@@ -153,7 +174,8 @@ export default {
       }, 3000);
     },
     openPage (url) {
-      if (window.confirm("Are you sure you want to leave this page? Your progress will be lost.")) {
+      const message = "Are you sure you want to leave this page? Your progress will be lost.";
+      if (this.score === 0 || window.confirm(message)) {
         this.$router.push(url);
       }
     },
@@ -168,6 +190,10 @@ export default {
       this.left = randomCountry();
       this.right = randomCountry(this.left.code_2);
       this.animate();
+    },
+    toggleTheme () {
+      this.dark = !this.dark;
+      localStorage.setItem("dark", this.dark);
     }
   }
 };

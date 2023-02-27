@@ -5,7 +5,7 @@ import { faMagnifyingGlass, faLocationDot } from "@fortawesome/free-solid-svg-ic
 <template>
   <div class="col-lg-10 mx-auto">
     <div class="bg-body-tertiary border rounded-3 p-4">
-      <form ref="form" class="row g-3 justify-content-center align-items-center">
+      <form ref="form" class="row g-3 gy-lg-0 justify-content-center align-items-center">
         <!-- field 1 -->
         <div class="col-lg-5">
           <div class="position-relative">

@@ -30,6 +30,11 @@ export default {
       loading: true
     };
   },
+  mounted () {
+    if (localStorage.getItem("dark") === null) {
+      localStorage.setItem("dark", true);
+    }
+  },
   beforeMount () {
     this.$nuxt.hook("page:finish", () => {
       this.loading = false;

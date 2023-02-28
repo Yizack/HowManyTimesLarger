@@ -14,6 +14,7 @@ export default {
     rootId: "app",
     buildAssetsDir: "/_app/",
     head: {
+      title: siteInfo.name,
       htmlAttrs: {
         lang: "en"
       },

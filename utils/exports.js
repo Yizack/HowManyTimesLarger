@@ -3,8 +3,9 @@ import { countries } from "~/assets/data/countries.json";
 
 export { siteInfo, countries };
 
-export const fixed = (n = 0, d = 0) => {
-  return Number(n).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
+export const fixed = (number = 0, decimal = 0) => {
+  const decimals = number < 1 ? 2 : decimal;
+  return Number(number).toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 };
 
 export const normalize = (string) => {
@@ -66,14 +67,14 @@ export const closeModals = () => {
   }
 };
 
-export const tweenNumber = async (v, end, duration) => {
-  while (v.tweened < end) {
+export const tweenNumber = async (ctx, end, duration) => {
+  while (ctx.tweened < end) {
     const set = end / (60 * duration);
-    if (v.tweened + set > end) {
-      v.tweened = end;
+    if (ctx.tweened + set > end) {
+      ctx.tweened = end;
     }
     else {
-      v.tweened += set;
+      ctx.tweened += set;
     }
     await new Promise(resolve => setTimeout(resolve, duration * 1000 / 60));
   }

@@ -51,8 +51,8 @@ definePageMeta({ layout: "main" });
                   <li><b>Alpha-2:</b> {{ country.code_2 }}</li>
                   <li><b>Alpha-3:</b> {{ country.code_3 }}</li>
                   <li><b>TLD:</b> {{ country.tld }}</li>
-                  <li><b>Area (km²)</b>: {{ country.km2 >= 1 ? fixed(country.km2) : fixed(country.km2, 2) }}</li>
-                  <li><b>Area (mi²):</b> {{ country.km2 / 2.59 >= 1 ? fixed(country.km2 / 2.59) : fixed(country.km2 / 2.59, 2) }}</li>
+                  <li><b>Area (km²)</b>: {{ fixed(country.km2) }}</li>
+                  <li><b>Area (mi²):</b> {{ fixed(country.km2 / 2.59) }}</li>
                 </ul>
               </div>
             </div>

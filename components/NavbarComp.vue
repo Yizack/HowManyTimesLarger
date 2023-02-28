@@ -11,7 +11,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
       </button>
       <div id="offcanvasNavbar" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 id="offcanvasDarkNavbarLabel" class="offcanvas-title"><AppIcon class="me-2" /> {{ siteInfo.name }}</h5>
+          <h5 id="offcanvasDarkNavbarLabel" class="offcanvas-title"><AppIcon class="me-2" :dark="dark" /><b> {{ siteInfo.name }}</b></h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
         </div>
         <div class="offcanvas-body">

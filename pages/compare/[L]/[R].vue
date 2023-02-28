@@ -74,7 +74,7 @@ export default {
   computed: {
     percent () {
       const p = (this.params[0].km2 / this.params[1].km2) * 100;
-      return p < 1 ? fixed(p, 2) : fixed(p);
+      return fixed(p);
     }
   },
   mounted () {

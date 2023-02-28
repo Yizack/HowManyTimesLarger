@@ -1,3 +1,13 @@
+@media screen and (orientation: landscape) {
+  .option {
+    height: 100%!important;
+    width: 50%!important;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+  }
+
+}
+
 @media (min-width: 992px) {
   :root {
     --vs-size: 6rem!important;
@@ -20,6 +30,17 @@
   .pages {
     width: unset!important;
   }
+
+  .btn-game {
+    --bs-btn-padding-y: 0.5rem;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-border-radius: 0.5rem;
+  }
+}
+
+.btn-game {
+  width: calc(6rem + 3vw);
+  --bs-btn-font-size: calc(0.60rem + 0.5vw);
 }
 
 :root {
@@ -43,10 +64,6 @@
 
 .option {
   height: 50%;
-}
-
-.option .btn {
-  width: 145px;
 }
 
 /* Vue Transitions */

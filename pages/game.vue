@@ -13,7 +13,7 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
             <div class="border border-primary border-3 rounded h-100 w-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow position-relative bg-body-secondary z-1">
               <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="`/images/shapes/${left.code_2}.svg`">
               <img class="img-fluid rounded-1 border border-1 bg-body" :src="`/images/flags/${left.code_2}.svg`" width="72" :alt="`Flag of ${left.name_en}`">
-              <h1>“{{ left.name_en }}”</h1>
+              <h1>“<b>{{ left.name_en }}</b>”</h1>
               <span>total area is approximately</span>
               <div class="display-1 text-game"><b>{{ fixed(left.km2) }} km²</b></div>
               <div class="display-6 text-game">({{ fixed(left.km2 / 2.59) }}) mi²</div>
@@ -26,18 +26,18 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
             <div class="border border-secondary border-3 rounded h-100 w-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow position-relative bg-body-secondary z-1">
               <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="`/images/shapes/${right.code_2}.svg`">
               <img class="img-fluid rounded-1 border border-1 bg-body" :src="`/images/flags/${right.code_2}.svg`" width="72" :alt="`Flag of ${right.name_en}`">
-              <h1>“{{ right.name_en }}”</h1>
+              <h1>“<b>{{ right.name_en }}</b>”</h1>
               <span>total area is{{ reveal ? " approximately" : null }}</span>
               <div v-if="!reveal" class="d-flex flex-column justify-content-center align-items-center">
                 <div class="text-uppercase">
-                  <span class="btn btn-outline-light btn-lg rounded-pill my-2 ps-4 d-flex justify-content-between align-items-center" @click="selectOption(left.km2 <= right.km2)">
-                    <b>Larger</b>
+                  <a class="btn btn-outline-light btn-game rounded-pill my-2 d-flex justify-content-between align-items-center" @click="selectOption(left.km2 <= right.km2)">
+                    <b class="ps-2">Larger</b>
                     <FontAwesomeIcon :icon="faCaretUp" />
-                  </span>
-                  <span class="btn btn-outline-light btn-lg rounded-pill my-2 d-flex justify-content-between align-items-center" @click="selectOption(left.km2 >= right.km2)">
+                  </a>
+                  <a class="btn btn-outline-light btn-game rounded-pill my-2 d-flex justify-content-between align-items-center" @click="selectOption(left.km2 >= right.km2)">
                     <b>Smaller</b>
                     <FontAwesomeIcon :icon="faCaretDown" />
-                  </span>
+                  </a>
                 </div>
                 <span>than <span class="text-dark-emphasis"><b>{{ left.name_en }}</b></span></span>
               </div>

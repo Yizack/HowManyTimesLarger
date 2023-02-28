@@ -82,14 +82,13 @@ main {
 
 [data-bs-theme="light"] {
   --bs-body-bg: #f2f1f1;
-  --test: rgb(219, 231, 219);
   --bs-secondary-bg-rgb: 219, 231, 219;
   --primary: #51c393;
   --primary-rgb: 81, 195, 147;
   --primary-hover: #4eb68a;
   --primary-disabled: #578b75;
-  --bs-primary-text: #d16625;
-  --bs-primary-text-rgb: 209, 102, 37;
+  --bs-primary-text: #a14f1c;
+  --bs-primary-text-rgb: 161, 79, 28;
   --bs-link-color: #4eb68a;
   --bs-link-color-rgb: 78, 182, 138;
   --bs-link-hover-color: #51c393;

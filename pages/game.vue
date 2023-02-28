@@ -78,8 +78,8 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
       <div v-if="loser" class="position-absolute start-50 top-50 translate-middle w-100 p-2 p-lg-0">
         <div class="text-center text-dark-emphasis container rounded border shadow py-5 col-lg-6">
           <h1 class="display-1"><b>Game Over</b></h1>
-          <h2>You Scored: <span class="text-primary-emphasis">{{ score }}</span></h2>
-          <h2>High Score: <span class="text-primary-emphasis">{{ highscore }}</span></h2>
+          <h2>You Scored: <span class="text-primary-emphasis"><b>{{ score }}</b></span></h2>
+          <h2>High Score: <span class="text-primary-emphasis"><b>{{ highscore }}</b></span></h2>
           <div class="mt-4">
             <NuxtLink class="btn btn-primary btn-lg rounded-pill mx-2" to="/">Back to Website</NuxtLink>
             <a class="btn btn-primary btn-lg rounded-pill mx-2" @click="playAgain()">Play Again</a>

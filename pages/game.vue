@@ -16,7 +16,7 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
               <h1>“<b>{{ left.name_en }}</b>”</h1>
               <span>total area is approximately</span>
               <div class="display-1 text-game"><b>{{ fixed(left.km2) }} km²</b></div>
-              <div class="display-6 text-game">({{ fixed(left.km2 / 2.59) }}) mi²</div>
+              <div class="display-6 text-game">({{ fixed(left.mi2) }}) mi²</div>
             </div>
           </div>
         </Transition>
@@ -141,8 +141,8 @@ export default {
   },
   mounted () {
     this.dark = JSON.parse(localStorage.getItem("dark"));
-    this.left = randomCountry();
-    this.right = randomCountry(this.left.code_2);
+    this.left = API.getRandomCountry();
+    this.right = API.getRandomCountry(this.left.code_2);
     this.highscore = localStorage.getItem("highscore") || 0;
     this.loaded = true;
     this.animate();
@@ -161,7 +161,7 @@ export default {
         if (correct) {
           this.score++;
           this.left = this.right;
-          this.right = randomCountry(this.left.code_2);
+          this.right = API.getRandomCountry(this.left.code_2);
         }
         else {
           this.loser = true;
@@ -187,8 +187,8 @@ export default {
     playAgain () {
       this.score = 0;
       this.loser = false;
-      this.left = randomCountry();
-      this.right = randomCountry(this.left.code_2);
+      this.left = API.getRandomCountry();
+      this.right = API.getRandomCountry(this.left.code_2);
       this.animate();
     },
     toggleTheme () {

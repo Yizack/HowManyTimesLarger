@@ -97,7 +97,7 @@ export default {
         this.search.searching = false;
       }
 
-      this.search.arr = filterCountries(input);
+      this.search.arr = API.filterCountries(input);
     },
     selectCountry (country) {
       this.search.searching = false;

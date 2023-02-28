@@ -39,8 +39,8 @@ definePageMeta({ layout: "main" });
           <div v-for="(country, index) in filtered" :id="country.code_2" :key="index" class="col-sm-6 col-lg-6 col-xl-4">
             <div class="row g-0 bg-body-tertiary position-relative h-100 rounded border" role="button" data-bs-toggle="modal" data-bs-target="#try" @click="updateCurrent(country)">
               <div class="col-5 p-3 p-md-4">
-                <img class="w-100 mb-3 rounded border flag" :src="`/images/flags/${country.code_2}.svg`" :alt="`Flag of ${country.name_en}`">
-                <img class="w-100 shape" :src="`/images/shapes/${country.code_2}.svg`" :alt="`Shape of ${country.name_en}`">
+                <img class="w-100 mb-3 rounded border flag" :src="country.flag" :alt="`Flag of ${country.name_en}`">
+                <img class="w-100 shape" :src="country.shape" :alt="`Shape of ${country.name_en}`">
               </div>
               <div class="col-7 p-3 ps-md-2">
                 <h5 class="m-0">{{ country.name_en }}</h5>
@@ -52,7 +52,7 @@ definePageMeta({ layout: "main" });
                   <li><b>Alpha-3:</b> {{ country.code_3 }}</li>
                   <li><b>TLD:</b> {{ country.tld }}</li>
                   <li><b>Area (km²)</b>: {{ fixed(country.km2) }}</li>
-                  <li><b>Area (mi²):</b> {{ fixed(country.km2 / 2.59) }}</li>
+                  <li><b>Area (mi²):</b> {{ fixed(country.mi2) }}</li>
                 </ul>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default {
   },
   computed: {
     filtered () {
-      return filterCountries(this.filter.search, this.filter.continent);
+      return API.filterCountries(this.filter.search, this.filter.continent);
     }
   },
   beforeUnmount () {
@@ -116,7 +116,7 @@ export default {
       this.current = country;
       this.randomCountries = [];
       for (let i = 0; i < 6; i++) {
-        this.randomCountries.push(randomCountry(country.code_2));
+        this.randomCountries.push(API.getRandomCountry(country.code_2));
       }
     }
   }

@@ -1,31 +1,9 @@
 import siteInfo from "~/siteInfo.js";
-import { countries } from "~/assets/data/countries.json";
-
-export { siteInfo, countries };
+export { siteInfo };
 
 export const fixed = (number = 0, decimal = 0) => {
   const decimals = number < 1 ? 2 : decimal;
   return Number(number).toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
-};
-
-export const normalize = (string) => {
-  return string.normalize("NFD").replace(/[\u0300-\u036F]/g, "");
-};
-
-export const randomCountry = (...code) => {
-  const filtered = countries.filter(country => !code.includes(country.code_2));
-  return filtered[Math.floor(Math.random() * filtered.length)];
-};
-
-export const filterCountries = (input, continent = "All") => {
-  return countries.filter((country) => {
-    const wordsMatch = normalize(String(input).toLocaleLowerCase()).split(" ").map(char => normalize(String(country.name_en).toLocaleLowerCase()).includes(char)).every(Boolean);
-    const continentMatch = continent === "All" || country.continent_en === continent;
-    if (wordsMatch && continentMatch) {
-      return country;
-    }
-    return false;
-  });
 };
 
 export const compareNumbers = (n1, n2) => {

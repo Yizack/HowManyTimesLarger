@@ -64,8 +64,8 @@ export default {
   data () {
     return {
       params: [
-        countries.find(country => country.code_2 === this.$route.params.L.toLocaleUpperCase()),
-        countries.find(country => country.code_2 === this.$route.params.R.toLocaleUpperCase())
+        API.getCountryByCode(this.$route.params.L.toLocaleUpperCase()),
+        API.getCountryByCode(this.$route.params.R.toLocaleUpperCase())
       ],
       compared: {},
       randomCountries: []
@@ -78,13 +78,12 @@ export default {
     }
   },
   mounted () {
-    this.params[0].mi2 = this.params[0].km2 / 2.59;
-    this.params[1].mi2 = this.params[1].km2 / 2.59;
-    this.compared = compareNumbers(this.params[0].km2, this.params[1].km2);
-    this.randomCountries = [];
-    for (let i = 0; i < 6; i++) {
-      this.randomCountries.push(randomCountry(this.params[0].code_2, this.params[1].code_2));
+    while (this.randomCountries.length < 6) {
+      this.randomCountries.push(API.getRandomCountry(this.params[0].code_2, this.params[1].code_2));
     }
+  },
+  created () {
+    this.compared = compareNumbers(this.params[0].km2, this.params[1].km2);
     useHead({
       title: `${this.params[0].name_en} vs ${this.params[1].name_en}`,
       meta: [],

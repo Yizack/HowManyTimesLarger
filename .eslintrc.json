@@ -23,12 +23,10 @@
     "normalize": "readonly",
     "siteInfo": "readonly",
     "fixed": "readonly",
-    "randomCountry": "readonly",
     "compareNumbers": "readonly",
-    "countries": "readonly",
     "closeModals": "readonly",
-    "filterCountries": "readonly",
-    "tweenNumber": "readonly"
+    "tweenNumber": "readonly",
+    "API": "readonly"
   },
   "plugins": [
     "vue"

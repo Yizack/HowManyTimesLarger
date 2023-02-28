@@ -11,7 +11,6 @@ export default {
   name: "QuickBoxes",
   data () {
     return {
-      countries,
       codeCountries: [
         ["US", "CA"],
         ["BR", "AR"],
@@ -30,16 +29,11 @@ export default {
     };
   },
   created () {
-    this.getCountries();
-  },
-  methods: {
-    getCountries () {
-      this.codeCountries.forEach((code) => {
-        const country1 = countries.find(country => country.code_2 === code[0]);
-        const country2 = countries.find(country => country.code_2 === code[1]);
-        this.tryCountries.push([country1, country2]);
-      });
-    }
+    this.codeCountries.forEach((code) => {
+      const country1 = API.getCountryByCode(code[0]);
+      const country2 = API.getCountryByCode(code[1]);
+      this.tryCountries.push([country1, country2]);
+    });
   }
 };
 </script>

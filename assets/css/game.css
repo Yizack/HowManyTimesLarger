@@ -123,6 +123,10 @@
   color: var(--bs-body-bg);
 }
 
+.text-game {
+  white-space: nowrap;
+}
+
 [data-bs-theme="dark"] .text-game {
   color: var(--bs-primary-text);
 }

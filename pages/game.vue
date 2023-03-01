@@ -11,8 +11,8 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
         <Transition name="fade">
           <div v-if="animateElements" class="col-lg-6 option pb-2 pb-lg-0">
             <div class="border border-primary border-3 rounded h-100 w-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow position-relative bg-body-secondary z-1">
-              <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="`/images/shapes/${left.code_2}.svg`">
-              <img class="img-fluid rounded-1 border border-1 bg-body" :src="`/images/flags/${left.code_2}.svg`" width="72" :alt="`Flag of ${left.name_en}`">
+              <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="left.shape">
+              <img class="img-fluid rounded-1 border border-1 bg-body flag" :src="left.flag" width="72" :alt="`Flag of ${left.name_en}`">
               <h1>“<b>{{ left.name_en }}</b>”</h1>
               <span>total area is approximately</span>
               <div class="display-1 text-game"><b>{{ fixed(left.km2) }} km²</b></div>
@@ -24,8 +24,8 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
         <Transition name="fade">
           <div v-if="animateElements" class="col-lg-6 option pt-2 pt-lg-0">
             <div class="border border-secondary border-3 rounded h-100 w-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow position-relative bg-body-secondary z-1">
-              <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="`/images/shapes/${right.code_2}.svg`">
-              <img class="img-fluid rounded-1 border border-1 bg-body" :src="`/images/flags/${right.code_2}.svg`" width="72" :alt="`Flag of ${right.name_en}`">
+              <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="right.shape">
+              <img class="img-fluid rounded-1 border border-1 bg-body flag" :src="right.flag" width="72" :alt="`Flag of ${right.name_en}`">
               <h1>“<b>{{ right.name_en }}</b>”</h1>
               <span>total area is{{ reveal ? " approximately" : null }}</span>
               <div v-if="!reveal" class="d-flex flex-column justify-content-center align-items-center">

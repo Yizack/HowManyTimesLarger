@@ -35,7 +35,7 @@ export const compareNumbers = (n1, n2) => {
 export const closeModals = () => {
   const nuxtApp = useNuxtApp();
   const modals = document.querySelectorAll(".modal.show");
-  if (modals) {
+  if (modals.length) {
     modals.forEach((modal) => {
       const instance = nuxtApp.$Modal.getInstance(modal);
       if (instance) {

@@ -39,3 +39,12 @@ definePageMeta({ layout: "main" });
     </section>
   </main>
 </template>
+
+<script>
+export default {
+  name: "ContactPage",
+  created () {
+    setPageSEO("contact");
+  }
+};
+</script>

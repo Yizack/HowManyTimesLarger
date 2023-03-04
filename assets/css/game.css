@@ -40,7 +40,7 @@
 
 .btn-game {
   width: calc(6rem + 3vw);
-  --bs-btn-font-size: calc(0.60rem + 0.5vw);
+  --bs-btn-font-size: calc(0.70rem + 0.5vw);
 }
 
 :root {
@@ -115,7 +115,7 @@
 }
 
 .vs-container {
-  background-color: var(--bs-dark-text);
+  background-color: var(--bs-heading-color);
   color: var(--bs-body-bg)!important;
 }
 

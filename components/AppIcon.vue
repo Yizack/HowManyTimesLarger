@@ -23,7 +23,7 @@ export default {
         },
         light: {
           primary: "#51c393",
-          secondary: "#a14f1c"
+          secondary: "#af3c00"
         }
       }
     };

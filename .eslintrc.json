@@ -26,7 +26,8 @@
     "compareNumbers": "readonly",
     "closeModals": "readonly",
     "tweenNumber": "readonly",
-    "API": "readonly"
+    "API": "readonly",
+    "setPageSEO": "readonly"
   },
   "plugins": [
     "vue"
@@ -48,6 +49,7 @@
       "error",
       "always"
     ],
+    "camelcase": "off",
     "arrow-spacing": [
       "error",
       {

@@ -30,6 +30,9 @@ definePageMeta({ layout: "main" });
 
 <script>
 export default {
-  name: "IndexPage"
+  name: "IndexPage",
+  created () {
+    setPageSEO("home");
+  }
 };
 </script>

@@ -90,9 +90,9 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
     <!-- Pages -->
     <div class="position-absolute start-50 translate-middle-x pages d-flex justify-content-center">
       <ul class="list-inline m-0">
-        <template v-for="(page, index) in siteInfo.pages" :key="index">
+        <template v-for="page in siteInfo.pages" :key="page.path">
           <li class="list-inline-item">
-            <a class="text-dark-emphasis" role="button" @click="openPage(page.url)">{{ page.name }}</a>
+            <a class="text-dark-emphasis" role="button" @click="openPage(page.path)">{{ page.name }}</a>
           </li>
           <li class="list-inline-item">
             <span>•</span>
@@ -138,6 +138,9 @@ export default {
         bodyAttrs: { "data-bs-theme": bool ? "dark" : "light" }
       });
     }
+  },
+  created () {
+    setPageSEO("game");
   },
   mounted () {
     this.dark = JSON.parse(localStorage.getItem("dark"));

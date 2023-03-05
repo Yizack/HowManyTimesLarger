@@ -58,22 +58,21 @@ export const tweenNumber = async (ctx, end, duration) => {
   }
 };
 
-export const setPageSEO = (page) => {
-  const { name, name_short, url, pages } = siteInfo;
-  const { title, description, keywords } = pages[page];
-  const page_title = `${title} | ${name_short}`;
-  const page_url = pages[page].path === "/" ? url : `${url}${pages[page].path}`;
+const SEO = (head) => {
+  const { name, name_short } = siteInfo;
+  const page_title = `${head.title} | ${name_short}`;
+
   useHead({
     title: page_title,
     meta: [
-      { hid: "description", name: "description", content: description },
-      { hid: "keywords", name: "keywords", content: keywords },
+      { hid: "description", name: "description", content: head.description },
+      { hid: "keywords", name: "keywords", content: head.keywords },
       // Open Graph
-      { property: "og:url", content: page_url },
+      { property: "og:url", content: head.page_url },
       { property: "og:type", content: "website" },
       { property: "og:title", content: name },
-      { property: "og:site_name", content: title },
-      { property: "og:description", content: description },
+      { property: "og:site_name", content: head.title },
+      { property: "og:description", content: head.description },
       /* TODO: Add cover image
       { property: "og:image", content: `${SITE.url}/${SITE.cover}` },
       { property: "og:image:width", content: "300" },
@@ -84,10 +83,25 @@ export const setPageSEO = (page) => {
       { name: "twitter:card", content: "summary" },
       // { name: "twitter:site", content: `@${SITE.twitter}` },
       { name: "twitter:title", content: page_title },
-      { name: "twitter:description", content: description }
+      { name: "twitter:description", content: head.description }
       /* TODO: Add cover image
       { name: "twitter:image", content: `${SITE.url}/${SITE.logo}` }
       */
+    ],
+    link: [
+      { rel: "canonical", href: head.page_url }
     ]
   });
+};
+
+export const setPageSEO = (page) => {
+  if (typeof page === "string") {
+    const { url, pages } = siteInfo;
+    const { title, description, keywords } = pages[page];
+    const page_url = pages[page].path === "/" ? url : `${url}${pages[page].path}`;
+    SEO({ title, description, keywords, page_url });
+  }
+  else if (typeof page === "object") {
+    SEO(page);
+  }
 };

@@ -5,7 +5,9 @@ const routes = ["/"];
 
 countries.forEach((left) => {
   countries.forEach((right) => {
-    routes.push(`/compare/${left.code_2}/${right.code_2}/`);
+    if (left.code_2 !== right.code_2) {
+      routes.push(`/compare/${left.code_2}/${right.code_2}/`);
+    }
   });
 });
 

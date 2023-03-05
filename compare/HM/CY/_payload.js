@@ -1,1 +1,1 @@
-export default {data:{},prerenderedAt:1678058380244}
+export default {data:{},prerenderedAt:1678060027733}

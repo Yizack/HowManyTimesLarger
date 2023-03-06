@@ -6,7 +6,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
   <nav id="navbar" class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
     <div class="container">
       <NuxtLink class="navbar-brand" to="/"><small><AppIcon class="me-2" :dark="dark" /><b>{{ siteInfo.name }}</b></small></NuxtLink>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Open Navbar">
         <span class="navbar-toggler-icon" />
       </button>
       <div id="offcanvasNavbar" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
@@ -25,7 +25,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
               <hr class="d-lg-none my-2 text-dark-emphasis">
             </li>
             <li class="nav-item">
-              <a class="nav-link px-lg-3 text-center text-uppercase" role="button" @click="toggleTheme()"><FontAwesomeIcon :icon="dark ? faMoon : faSun" /><span class="d-lg-none d-inline ms-2"><b>Theme</b></span></a>
+              <a class="nav-link px-lg-3 text-center text-uppercase" role="button" aria-label="Change Theme" @click="toggleTheme()"><FontAwesomeIcon :icon="dark ? faMoon : faSun" /><span class="d-lg-none d-inline ms-2"><b>Theme</b></span></a>
             </li>
           </ul>
         </div>

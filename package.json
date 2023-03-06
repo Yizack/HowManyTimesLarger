@@ -1,20 +1,33 @@
 {
-  "private": true,
+  "name": "HowManyTimesLarger",
+  "version": "1.0.0",
+  "description": "Website and Game for easy country size comparisons.",
+  "author": "Yizack Rangel",
+  "license": "MIT",
   "type": "module",
+  "homepage": "https://howmanytimeslarger.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yizack/HowManyTimesLarger"
+  },
+  "bugs": {
+    "url": "https://github.com/Yizack/HowManyTimesLarger/issues"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --port=5173",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "publish": "wrangler publish hmtl-api/src/index.js"
+    "sitemap": "node generateSitemap.js"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^12.0.0",
     "eslint": "^8.35.0",
     "eslint-plugin-vue": "^9.9.0",
     "nuxt": "^3.2.3",
-    "stylelint": "^15.2.0"
+    "stylelint": "^15.2.0",
+    "xml": "^1.0.1"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.3.0",

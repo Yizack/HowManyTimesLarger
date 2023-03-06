@@ -42,8 +42,8 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
                 <span>than <span class="text-dark-emphasis"><b>{{ left.name_en }}</b></span></span>
               </div>
               <div v-else>
-                <div class="display-1 text-primary-emphasis"><b>{{ fixed(tweened) }} km²</b></div>
-                <div class="display-6 text-primary-emphasis">({{ fixed(tweened / 2.59) }}) mi²</div>
+                <div class="display-1 text-game"><b>{{ fixed(tweened) }} km²</b></div>
+                <div class="display-6 text-game">({{ fixed(tweened / 2.59) }}) mi²</div>
               </div>
             </div>
           </div>

@@ -106,7 +106,7 @@ main {
 
 * {
   --bs-primary: var(--primary);
-  --dark: #171a1e;
+  --dark: #121518;
   --bs-primary-rgb: var(--primary-rgb);
   --bs-secondary-rgb: var(--bs-primary-text-rgb);
 }

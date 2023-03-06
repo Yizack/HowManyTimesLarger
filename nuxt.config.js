@@ -29,8 +29,8 @@ export default {
         { name: "robots", content: "index, follow" },
         { name: "apple-mobile-web-app-title", content: siteInfo.name },
         { name: "application-name", content: siteInfo.name },
-        { name: "msapplication-TileColor", content: "#171a1e" },
-        { name: "theme-color", content: "#171a1e" }
+        { name: "msapplication-TileColor", content: "#121518" },
+        { name: "theme-color", content: "#121518" }
       ],
       link: [
         { rel: "preload", as: "style", crossorigin: "anonymous", href: "https://fonts.googleapis.com/css?family=Roboto:400,300" },
@@ -41,7 +41,8 @@ export default {
         { rel: "icon", type: "image/png", sizes: "192x192", href: "/android-chrome-192x192.png" },
         { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
         { rel: "manifest", href: "/site.webmanifest" },
-        { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#171a1e" }
+        { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#121518" },
+        { rel: "shortcut icon", href: "/favicon.ico" }
       ]
     }
   },

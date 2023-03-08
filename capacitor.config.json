@@ -1,6 +1,0 @@
-{
-  "appId": "com.howmanytimeslarger.app",
-  "appName": "How Many Times Larger",
-  "webDir": ".output/public",
-  "bundledWebRuntime": false
-}

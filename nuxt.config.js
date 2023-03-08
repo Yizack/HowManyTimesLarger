@@ -55,8 +55,7 @@ export default {
   },
   nitro: {
     prerender: {
-      crawlLinks: true,
-      routes
+      crawlLinks: false
     }
   }
 };

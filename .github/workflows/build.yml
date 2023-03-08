@@ -17,16 +17,54 @@ jobs:
       with:
         persist-credentials: false
 
+    - name: Setup java
+      uses: actions/setup-java@v1
+      with:
+        distribution: 'zulu'
+        java-version: '11'
+
     - name: Install and build 🔧
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+
     - run: |
         npm ci
         npm run sitemap
         npm run generate
+
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages
         folder: .output/public
+
+
+    - name: Capacitor
+      run: |
+          npm run capInit
+          npm run android
+          npm run sync
+
+    - name: Version app
+      run: |
+          npm run versionApp
+          npm run trapeze
+
+    - name: Build app bundle
+      run: cd android && gradle bundle
+
+    - name: Extract Android signing key from env
+      run: |
+        echo "${{ secrets.RELEASE_KEYSTORE }}" > android/release.jks.base64
+        base64 -d android/release.jks.base64 > android/release.decrypted.jks
+
+    - name: Sign dev build
+      run: jarsigner -keystore android/release.decrypted.jks -storepass "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" -signedjar ./android/app/build/outputs/bundle/release/app-release-signed.aab ./android/app/build/outputs/bundle/release/app-release.aab release
+
+    - name: Upload release bundle
+      uses: actions/upload-artifact@v2
+      with:
+        name: app-release
+        path: android/app/build/outputs/bundle/release/app-release-signed.aab
+        retention-days: 60

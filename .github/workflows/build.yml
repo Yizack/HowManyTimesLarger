@@ -51,7 +51,10 @@ jobs:
           npm run trapeze
 
     - name: Build app bundle
-      run: cd android && gradle bundle
+      run: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew app:bundleRelease --stacktrace
 
     - name: Extract Android signing key from env
       run: |

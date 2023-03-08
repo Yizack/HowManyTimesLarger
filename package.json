@@ -25,7 +25,9 @@
     "resources": "capacitor-resources -p android,ios -I",
     "versionApp": "node updateVersion.js",
     "trapeze": "npx trapeze run config.yaml -y",
-    "sync": "npx cap sync"
+    "rmdirs_windows": "rmdir .output\\public\\compare /S /Q && rmdir .output\\public\\countries /S /Q && rmdir .output\\public\\game /S /Q && rmdir .output\\public\\contact /S /Q",
+    "rmdirs_linux": "rm -rf .output/public/compare && rm -rf .output/public/countries && rm -rf .output/public/game && rm -rf .output/public/contact",
+    "sync": "(npm run rmdirs_windows || npm run rmdirs_linux) && npx cap sync"
   },
   "devDependencies": {
     "@capacitor/cli": "^4.7.0",

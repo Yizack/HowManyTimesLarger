@@ -23,11 +23,14 @@
     "android": "npx cap add android",
     "ios": "npx cap add ios",
     "resources": "capacitor-resources -p android,ios -I",
+    "versionApp": "node updateVersion.js",
+    "trapeze": "npx trapeze run config.yaml -y",
     "sync": "npx cap sync"
   },
   "devDependencies": {
     "@capacitor/cli": "^4.7.0",
     "@nuxtjs/eslint-config": "^12.0.0",
+    "@trapezedev/configure": "^7.0.8",
     "capacitor-resources": "^2.0.5",
     "eslint": "^8.35.0",
     "eslint-plugin-vue": "^9.9.0",

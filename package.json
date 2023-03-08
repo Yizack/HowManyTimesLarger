@@ -19,10 +19,16 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "sitemap": "node generateSitemap.js"
+    "sitemap": "node generateSitemap.js",
+    "android": "npx cap add android",
+    "ios": "npx cap add ios",
+    "resources": "capacitor-resources -p android,ios -I",
+    "sync": "npx cap sync"
   },
   "devDependencies": {
+    "@capacitor/cli": "^4.7.0",
     "@nuxtjs/eslint-config": "^12.0.0",
+    "capacitor-resources": "^2.0.5",
     "eslint": "^8.35.0",
     "eslint-plugin-vue": "^9.9.0",
     "nuxt": "^3.2.3",
@@ -30,6 +36,9 @@
     "xml": "^1.0.1"
   },
   "dependencies": {
+    "@capacitor/android": "^4.7.0",
+    "@capacitor/core": "^4.7.0",
+    "@capacitor/ios": "^4.7.0",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",

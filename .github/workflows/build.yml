@@ -42,7 +42,6 @@ jobs:
 
     - name: Capacitor
       run: |
-          npm run capInit
           npm run android
           npm run sync
 

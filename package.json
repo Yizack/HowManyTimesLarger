@@ -20,6 +20,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "sitemap": "node generateSitemap.js",
+    "capInit": "npx cap init \"How Many Times Larger\" \"com.howmanytimeslarger.app\" --web-dir .\\",
     "android": "npx cap add android",
     "ios": "npx cap add ios",
     "resources": "capacitor-resources -p android,ios -I",

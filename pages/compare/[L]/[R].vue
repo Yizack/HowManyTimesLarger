@@ -6,13 +6,7 @@ definePageMeta({ layout: "main" });
 <template>
   <section>
     <div class="container my-4">
-      <nav :style="`--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);`" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><NuxtLink to="/"><b>App</b></NuxtLink></li>
-          <li class="breadcrumb-item">Compare</li>
-          <li v-for="country in params" :key="country.code_2" class="breadcrumb-item active">{{ country.name_en }}</li>
-        </ol>
-      </nav>
+      <BreadCrumb :items="['Compare']" :active="params.map(country => country.name_en)" />
       <div class="p-sm-5 rounded-3 bg-body-tertiary text-dark-emphasis text-center border mb-3 mb-lg-0 position-relative">
         <div class="row">
           <div v-for="country in params" :key="country.code_2" class="col-lg-6 mx-auto my-5">

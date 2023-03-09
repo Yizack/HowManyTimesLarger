@@ -47,3 +47,4 @@ const xmlObject = {
 
 const xmlString = xml(xmlObject);
 writeFileSync(outFile, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + xmlString);
+console.info("Generated: sitemap.xml");

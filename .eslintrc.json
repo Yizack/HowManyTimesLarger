@@ -57,6 +57,7 @@
         "after": true
       }
     ],
+    "no-console": ["error", { "allow": ["info"] }],
     "brace-style": ["error", "stroustrup"],
     "no-multi-spaces": "error",
     "space-before-blocks": "error",

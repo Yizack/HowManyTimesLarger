@@ -11,7 +11,7 @@ countries.forEach((country) => {
     response.pipe(file);
     file.on("finish", () => {
       file.close();
-      console.log(`Downloaded Flag: ${country.name_en}`);
+      console.info(`Downloaded Flag: ${country.name_en}`);
     });
   });
 
@@ -20,7 +20,7 @@ countries.forEach((country) => {
     response.pipe(shapes);
     shapes.on("finish", () => {
       shapes.close();
-      console.log(`Downloaded Shape: ${country.name_en}`);
+      console.info(`Downloaded Shape: ${country.name_en}`);
     });
   });
 });

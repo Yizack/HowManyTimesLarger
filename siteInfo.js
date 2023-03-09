@@ -21,6 +21,13 @@ export default {
       description: "Learn about the countries and territories of the world. Flags, shape, continent, capital, area, and more.",
       keywords: "countries, country, flags, shapes, map, maps, area, capital, continent, dial code"
     },
+    about: {
+      name: "About",
+      title: "About",
+      path: "/about/",
+      description: "Know more about the developer of How Many Times Larger, the website, the game, changelog, and more.",
+      keywords: "about, developer, website, game, quiz, countries, country, size, comparison, compare, learn, geography, world, map, maps, larger or smaller, higher or lower, score, high score"
+    },
     contact: {
       name: "Contact",
       title: "Contact, Report a Bug, or Suggest a Feature",

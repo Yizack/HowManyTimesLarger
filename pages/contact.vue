@@ -7,12 +7,7 @@ definePageMeta({ layout: "main" });
     <!-- Try -->
     <section id="contact">
       <div class="container py-4">
-        <nav :style="`--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);`" aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><NuxtLink to="/"><b>App</b></NuxtLink></li>
-            <li class="breadcrumb-item">Contact</li>
-          </ol>
-        </nav>
+        <BreadCrumb :items="['Contact']" />
         <div class="mx-auto col-xl-8">
           <div class="text-center mb-4">
             <h1><b>Contact</b></h1>
@@ -29,7 +24,7 @@ definePageMeta({ layout: "main" });
             <p>Please provide additional information such as the browser, device, and operating system you are using and what were you doing when you encountered the error.</p>
             <ul>
               <li>Browser: (Chrome, Firefox, Safari, etc.)</li>
-              <li>Operating System: (Windows, Mac, Linux, etc.)</li>
+              <li>Operating System: (Windows, Mac, Linux, Android, iOS, etc.)</li>
               <li>Device: (PC, Tablet, Phone, etc.)</li>
               <li>Steps to reproduce the error</li>
             </ul>

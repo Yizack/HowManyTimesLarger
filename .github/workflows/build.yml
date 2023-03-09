@@ -42,6 +42,7 @@ jobs:
     - name: Capacitor
       run: |
           npm run android
+          npm run resources
           npm run sync
 
     - name: Version app
@@ -68,4 +69,4 @@ jobs:
       with:
         name: app-release
         path: android/app/build/outputs/bundle/release/app-release-signed.aab
-        retention-days: 60
+        retention-days: 7

@@ -102,6 +102,7 @@ main {
   --bs-link-hover-color: rgb(8, 128, 66);
   --bs-link-hover-color-rgb: 8, 128, 66;
   --bs-heading-color: var(--bs-body-color);
+  --bs-secondary-color: #9da8b3;
 }
 
 * {

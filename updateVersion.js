@@ -14,3 +14,5 @@ writeFileSync("config.yaml", `platforms:
     versionName: ${packageJson.version}
     versionCode: ${generateVersionCode(packageJson.version)}
 `);
+
+console.info("config.yaml created");

@@ -91,12 +91,14 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
     <div class="position-absolute start-50 translate-middle-x pages d-flex justify-content-center">
       <ul class="list-inline m-0">
         <template v-for="page in siteInfo.pages" :key="page.path">
-          <li class="list-inline-item">
-            <a class="text-dark-emphasis" role="button" @click="openPage(page.path)">{{ page.name }}</a>
-          </li>
-          <li class="list-inline-item">
-            <span>•</span>
-          </li>
+          <template v-if="page.name !== 'Game'">
+            <li class="list-inline-item">
+              <a class="text-dark-emphasis" role="button" @click="openPage(page.path)">{{ page.name }}</a>
+            </li>
+            <li class="list-inline-item">
+              <span>•</span>
+            </li>
+          </template>
         </template>
         <li class="list-inline-item">
           <Transition name="fade">

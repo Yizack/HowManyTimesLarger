@@ -18,7 +18,7 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Check Dependencies Cache 📦
+    - name: Check Dependencies Cache ☁️
       uses: actions/cache@v3
       id: cache
       with:
@@ -35,17 +35,18 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
 
-    - name: Save Primes ☁️
-      id: cache-primes-save
-      uses: actions/cache/save@v3
-      with:
-        path: ./
-        key: build-cache-${{ hashFiles('**/package-lock.json') }}
-
     - name: Build App ⚡
       run: |
         npm run sitemap
         npm run generate
+
+    - name: Save Primes ☁️
+      id: cache-primes-save
+      if: steps.cache.outputs.cache-hit != 'true'
+      uses: actions/cache/save@v3
+      with:
+        path: ./
+        key: build-cache-${{ hashFiles('**/package-lock.json') }}
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4

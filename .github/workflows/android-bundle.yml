@@ -17,59 +17,51 @@ jobs:
 
     steps:
     - name: Checkout 🛎️
-      if: steps.cache.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         persist-credentials: false
 
-    - name: Check Dependencies Cache ☁️
-      uses: actions/cache@v3
+    - name: Restore Cached Primes ☁️
       id: cache
+      uses: actions/cache/restore@v3
       with:
         path: ./
         key: build-cache-${{ hashFiles('**/package-lock.json') }}
         
     - name: Setup java ☕
-      if: steps.cache.outputs.cache-hit != 'true'
       uses: actions/setup-java@v1
       with:
         distribution: 'zulu'
         java-version: '11'
 
     - name: Capacitor 📲
-      if: steps.cache.outputs.cache-hit != 'true'
       run: |
           npm run android
           npm run resources
           npm run sync
 
     - name: Version App 🔢
-      if: steps.cache.outputs.cache-hit != 'true'
       run: |
           npm run versionApp
           npm run trapeze
 
     - name: Bundle Android App 📦
-      if: steps.cache.outputs.cache-hit != 'true'
       run: |
           cd android
           chmod +x ./gradlew
           ./gradlew app:bundleRelease --stacktrace
 
     - name: Extract Android Signing Key 🔑
-      if: steps.cache.outputs.cache-hit != 'true'
       run: |
         echo "${{ secrets.RELEASE_KEYSTORE }}" > android/release.jks.base64
         base64 -d android/release.jks.base64 > android/release.decrypted.jks
 
     - name: Sign Build 🔐
-      if: steps.cache.outputs.cache-hit != 'true'
       run: jarsigner -keystore android/release.decrypted.jks -storepass "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" -keypass "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" -signedjar ./android/app/build/outputs/bundle/release/app-release-signed.aab ./android/app/build/outputs/bundle/release/app-release.aab howmanytimeslarger
 
     - name: Upload Bundle 📤
-      if: steps.cache.outputs.cache-hit != 'true'
       uses: actions/upload-artifact@v2
       with:
         name: app-release
         path: android/app/build/outputs/bundle/release/app-release-signed.aab
-        retention-days: 7
+        retention-days: 1

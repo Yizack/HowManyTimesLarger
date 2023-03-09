@@ -11,7 +11,7 @@ export default {
       name: "Home",
       title: "Easy country size comparisons",
       path: "/",
-      description: "Find out how many times larger a country is than another. Play the game to test your knowledge. Learn about the countries and territories of the world.",
+      description: "Find out how many times larger a country is than another. Play the game and test your knowledge. Learn about the countries and territories of the world.",
       keywords: "countries, country, size, comparison, compare, game, quiz, learn, geography, world, map, maps, how many times larger, how many times bigger, how many times smaller, higher lower"
     },
     countries: {

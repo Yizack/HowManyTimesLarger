@@ -1,3 +1,5 @@
+[![Build](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/build-app.yml/badge.svg?branch=main)](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/build-app.yml)
+[![Android Bundle](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/android-bundle.yml/badge.svg?branch=main)](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/android-bundle.yml)
 # How Many Times Larger
 
 Website and Game for easy country size comparisons. Find out how many times larger a country is than another. Learn about the countries and territories of the world.

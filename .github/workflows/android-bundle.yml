@@ -1,60 +1,16 @@
-name: Build and Bundle
+name: Android Bundle
 
 on:
-  push:
-    branches: [ main ]
-
+  workflow_run:
+    workflows: [Build]
+    types: 
+      - completed
+    
 jobs:
-
-  # Build App
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
-
-    steps:
-    - name: Checkout 🛎️
-      uses: actions/checkout@v3
-      with:
-        persist-credentials: false
-
-    - name: Check Dependencies Cache 📦
-      uses: actions/cache@v3
-      id: cache
-      with:
-        path: ./
-        key: build-cache-${{ hashFiles('**/package-lock.json') }}
-
-    - name: Install Dependencies 📦
-      if: steps.cache.outputs.cache-hit != 'true'
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-
-    - name: Build App ⚡
-      run: |
-        npm run sitemap
-        npm run generate
-        
-    - name: Save Primes ☁️
-      id: cache-primes-save
-      uses: actions/cache/save@v3
-      with:
-        path: ./
-        key: build-cache-${{ hashFiles('**/package-lock.json') }}
-
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: .output/public
-
   # Android Bundle
   android-bundle:
-    needs: build
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     strategy:
       matrix:
         node-version: [18.x]

@@ -1,4 +1,4 @@
-[![Build](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/build-app.yml/badge.svg?branch=main)](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/build-app.yml)
+[![Build](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/build.yml)
 [![Android Bundle](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/android-bundle.yml/badge.svg?branch=main)](https://github.com/Yizack/HowManyTimesLarger/actions/workflows/android-bundle.yml)
 # How Many Times Larger
 

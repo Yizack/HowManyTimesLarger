@@ -1,5 +1,5 @@
 {
-  "name": "HowManyTimesLarger",
+  "name": "howmanytimeslarger",
   "version": "1.0.0",
   "description": "Website and Game for easy country size comparisons.",
   "author": "Yizack Rangel",
@@ -25,7 +25,10 @@
     "resources": "capacitor-resources -p android,ios -I -S",
     "versionApp": "node updateVersion.js",
     "trapeze": "npx trapeze run config.yaml -y",
-    "sync": "node rmdirs.js && npx cap sync"
+    "sync": "node rmdirs.js && npx cap sync",
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major"
   },
   "devDependencies": {
     "@capacitor/cli": "^4.7.0",

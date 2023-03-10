@@ -48,8 +48,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#121518",
-    "background_color": "#121518",
-    "start_url": "https://howmanytimeslarger.com/",
+    "theme_color": "#121619",
+    "background_color": "#121619",
     "display": "standalone"
 }

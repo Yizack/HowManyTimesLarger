@@ -1,9 +1,5 @@
 import { countries } from "~/assets/data/countries.json";
 
-const normalize = (string) => {
-  return string.normalize("NFD").replace(/[\u0300-\u036F]/g, "");
-};
-
 class HowManyTimesLarger {
   constructor (countries) {
     this.countries = countries;
@@ -33,7 +29,9 @@ class HowManyTimesLarger {
 
   filterCountries (input, continent = "All") {
     return this.countries.filter((country) => {
-      const wordsMatch = normalize(String(input).toLocaleLowerCase()).split(" ").map(char => normalize(String(country.name_en).toLocaleLowerCase()).includes(char)).every(Boolean);
+      const normalized_input = UTILS.normalize(String(input).toLocaleLowerCase());
+      const normalized_name_en = UTILS.normalize(String(country.name_en).toLocaleLowerCase());
+      const wordsMatch = normalized_input.split(" ").map(char => normalized_name_en.includes(char)).every(Boolean);
       const continentMatch = continent === "All" || country.continent_en === continent;
       if (wordsMatch && continentMatch) {
         return this.getCountry(country);

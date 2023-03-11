@@ -33,8 +33,8 @@ export default {
         { name: "theme-color", content: "#121518" }
       ],
       link: [
-        { rel: "preload", as: "style", crossorigin: "anonymous", href: "https://fonts.googleapis.com/css?family=Roboto:400,300" },
-        { rel: "stylesheet", crossorigin: "anonymous", href: "https://fonts.googleapis.com/css?family=Roboto:400,300" },
+        { rel: "preload", as: "style", crossorigin: "anonymous", href: "https://fonts.googleapis.com/css?family=Nunito:400,300" },
+        { rel: "stylesheet", crossorigin: "anonymous", href: "https://fonts.googleapis.com/css?family=Nunito:400,300" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
         { rel: "icon", type: "image/png", sizes: "194x194", href: "/favicon-194x194.png" },
@@ -55,8 +55,7 @@ export default {
   },
   nitro: {
     prerender: {
-      crawlLinks: true,
-      routes
+      crawlLinks: true
     }
   }
 };

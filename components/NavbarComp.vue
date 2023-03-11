@@ -52,10 +52,12 @@ export default {
       useHead({
         bodyAttrs: { "data-bs-theme": bool ? "dark" : "light" }
       });
+      CAPACITOR.setStatusBar(bool);
     }
   },
   mounted () {
     this.dark = JSON.parse(localStorage.getItem("dark"));
+    CAPACITOR.setStatusBar(this.dark);
   },
   methods: {
     toggleTheme () {

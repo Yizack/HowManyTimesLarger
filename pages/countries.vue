@@ -28,7 +28,8 @@ definePageMeta({ layout: "main" });
           </div>
         </div>
         <div class="text-center my-3">
-          <h5 class="m-0">{{ filtered.length }} Results</h5>
+          <h5 v-if="filtered.length" class="m-0">{{ filtered.length }} Results</h5>
+          <h5 v-else class="m-0"><i>No results found</i></h5>
         </div>
         <div class="row g-4">
           <div v-for="(country, index) in filtered" :id="country.code_2" :key="index" class="col-sm-6 col-lg-6 col-xl-4">
@@ -46,8 +47,8 @@ definePageMeta({ layout: "main" });
                   <li><b>Alpha-2:</b> {{ country.code_2 }}</li>
                   <li><b>Alpha-3:</b> {{ country.code_3 }}</li>
                   <li><b>TLD:</b> {{ country.tld }}</li>
-                  <li><b>Area (km²)</b>: {{ fixed(country.km2) }}</li>
-                  <li><b>Area (mi²):</b> {{ fixed(country.mi2) }}</li>
+                  <li><b>Area (km²)</b>: {{ UTILS.fixed(country.km2) }}</li>
+                  <li><b>Area (mi²):</b> {{ UTILS.fixed(country.mi2) }}</li>
                 </ul>
               </div>
             </div>
@@ -104,10 +105,10 @@ export default {
     }
   },
   created () {
-    setPageSEO("countries");
+    UTILS.setPageSEO("countries");
   },
   beforeUnmount () {
-    closeModals();
+    UTILS.closeModals();
   },
   methods: {
     updateCurrent (country) {

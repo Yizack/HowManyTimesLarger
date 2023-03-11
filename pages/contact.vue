@@ -39,7 +39,7 @@ definePageMeta({ layout: "main" });
 export default {
   name: "ContactPage",
   created () {
-    setPageSEO("contact");
+    UTILS.setPageSEO("contact");
   }
 };
 </script>

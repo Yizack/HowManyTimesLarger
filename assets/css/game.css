@@ -48,7 +48,7 @@
 }
 
 .score-bar {
-  top: 0.5rem;
+  top: 0.8rem;
 }
 
 .vs {
@@ -88,11 +88,6 @@
   100% {transform: scale(1);}
 }
 
-.shape-game {
-  user-select: none;
-  pointer-events: none;
-}
-
 [data-bs-theme="light"] .shape-game {
   filter: invert(1) opacity(0.8);
 }
@@ -125,8 +120,14 @@
 
 .text-game {
   white-space: nowrap;
+  font-weight: 400;
+  line-height: 1.37;
 }
 
 [data-bs-theme="dark"] .text-game {
   color: var(--bs-primary-text);
+}
+
+.flag-game {
+  width: calc(35px + 3vw);
 }

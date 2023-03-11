@@ -15,8 +15,8 @@ definePageMeta({ layout: "main" });
             </div>
             <h1>{{ country.name_en }}</h1>
             <img class="shape" :src="country.shape" :alt="`Shape of ${country.name_en}`">
-            <p class="display-3 m-0"><b>~{{ fixed(country.km2) }} km²</b></p>
-            <p class="display-6 m-0 text-primary-emphasis">(~{{ fixed(country.mi2) }} mi²)</p>
+            <p class="display-3 m-0"><b>~{{ UTILS.fixed(country.km2) }} km²</b></p>
+            <p class="display-6 m-0 text-primary-emphasis">(~{{ UTILS.fixed(country.mi2) }} mi²)</p>
           </div>
         </div>
         <div class="position-absolute top-50 start-50 translate-middle fs-2">
@@ -34,13 +34,13 @@ definePageMeta({ layout: "main" });
             <p class="display-5 text-dark-emphasis">
               <b>{{ params[0].name_en }}</b> is
               <template v-if="compared.diff > 0">
-                about <b class="text-primary-emphasis">{{ fixed(compared.diff, 2) }}</b> times
+                about <b class="text-primary-emphasis">{{ UTILS.fixed(compared.diff, 2) }}</b> times
               </template>
               <b class="text-uppercase text-primary-emphasis">{{ compared.word }}</b>
               {{ compared.func }}
               <b>{{ params[1].name_en }}</b>
             </p>
-            <p class="m-0">{{ params[0].name_en }} total area is approximately {{ fixed(params[0].km2) }} km², while {{ params[1].name_en }} is approximately {{ fixed(params[1].km2) }} km², making {{ params[0].name_en }} {{ percent }}% the size of {{ params[1].name_en }}.</p>
+            <p class="m-0">{{ params[0].name_en }} total area is approximately {{ UTILS.fixed(params[0].km2) }} km², while {{ params[1].name_en }} is approximately {{ UTILS.fixed(params[1].km2) }} km², making {{ params[0].name_en }} {{ percent }}% the size of {{ params[1].name_en }}.</p>
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@ export default {
   computed: {
     percent () {
       const p = (this.params[0].km2 / this.params[1].km2) * 100;
-      return fixed(p);
+      return UTILS.fixed(p);
     }
   },
   mounted () {
@@ -81,10 +81,10 @@ export default {
     }
   },
   created () {
-    this.compared = compareNumbers(this.params[0].km2, this.params[1].km2);
-    setPageSEO({
+    this.compared = UTILS.compareNumbers(this.params[0].km2, this.params[1].km2);
+    UTILS.setPageSEO({
       title: `${this.params[0].name_en} vs ${this.params[1].name_en}`,
-      description: `${this.params[0].name_en} is ${this.compared.diff > 0 ? "about " + fixed(this.compared.diff, 2) + " times " : ""}${this.compared.word} ${this.compared.func} ${this.params[1].name_en}. ${this.params[0].name_en} total area is ~${fixed(this.params[0].km2)} km², while ${this.params[1].name_en} is ~${fixed(this.params[1].km2)} km², making ${this.params[0].name_en} ${this.percent}% the size of ${this.params[1].name_en}.`,
+      description: `${this.params[0].name_en} is ${this.compared.diff > 0 ? "about " + UTILS.fixed(this.compared.diff, 2) + " times " : ""}${this.compared.word} ${this.compared.func} ${this.params[1].name_en}. ${this.params[0].name_en} total area is ~${UTILS.fixed(this.params[0].km2)} km², while ${this.params[1].name_en} is ~${UTILS.fixed(this.params[1].km2)} km², making ${this.params[0].name_en} ${this.percent}% the size of ${this.params[1].name_en}.`,
       keywords: `compare, ${this.params[0].name_en}, ${this.params[1].name_en}, area, size, km², mi², square kilometers, square miles, ${this.params[0].name_en} vs ${this.params[1].name_en}, ${this.params[1].name_en} vs ${this.params[0].name_en}`,
       page_url: `${siteInfo.url}/compare/${this.params[0].code_2}/${this.params[1].code_2}/`
     });

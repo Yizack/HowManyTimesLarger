@@ -16,16 +16,7 @@ export default {
   },
   data () {
     return {
-      colors: {
-        dark: {
-          primary: "#72C5A2",
-          secondary: "#ECB390"
-        },
-        light: {
-          primary: "#2d9e64",
-          secondary: "#af3c00"
-        }
-      }
+      colors: siteInfo.colors
     };
   }
 };

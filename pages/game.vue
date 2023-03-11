@@ -12,11 +12,11 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
           <div v-if="animateElements" class="col-lg-6 option pb-2 pb-lg-0">
             <div class="border border-primary border-3 rounded h-100 w-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow position-relative bg-body-secondary z-1">
               <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="left.shape">
-              <img class="img-fluid rounded-1 border border-1 bg-body flag" :src="left.flag" width="72" :alt="`Flag of ${left.name_en}`">
+              <img class="img-fluid rounded-1 border border-1 bg-body flag-game" :src="left.flag" :alt="`Flag of ${left.name_en}`">
               <h1>“<b>{{ left.name_en }}</b>”</h1>
               <span>total area is approximately</span>
-              <div class="display-1 text-game"><b>{{ fixed(left.km2) }} km²</b></div>
-              <div class="display-6 text-game">({{ fixed(left.mi2) }}) mi²</div>
+              <div class="display-2 text-game"><b>{{ UTILS.fixed(left.km2) }} km²</b></div>
+              <div class="display-6 text-game">({{ UTILS.fixed(left.mi2) }}) mi²</div>
             </div>
           </div>
         </Transition>
@@ -25,7 +25,7 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
           <div v-if="animateElements" class="col-lg-6 option pt-2 pt-lg-0">
             <div class="border border-secondary border-3 rounded h-100 w-100 p-3 p-lg-5 text-center d-flex flex-column align-items-center justify-content-center shadow position-relative bg-body-secondary z-1">
               <img class="shape-game z-n1 position-absolute w-100 h-100 object-fit-cover" :src="right.shape">
-              <img class="img-fluid rounded-1 border border-1 bg-body flag" :src="right.flag" width="72" :alt="`Flag of ${right.name_en}`">
+              <img class="img-fluid rounded-1 border border-1 bg-body flag-game" :src="right.flag" :alt="`Flag of ${right.name_en}`">
               <h1>“<b>{{ right.name_en }}</b>”</h1>
               <span>total area is{{ reveal ? " approximately" : null }}</span>
               <div v-if="!reveal" class="d-flex flex-column justify-content-center align-items-center">
@@ -42,8 +42,8 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
                 <span>than <span class="text-dark-emphasis"><b>{{ left.name_en }}</b></span></span>
               </div>
               <div v-else>
-                <div class="display-1 text-game"><b>{{ fixed(tweened) }} km²</b></div>
-                <div class="display-6 text-game">({{ fixed(tweened / 2.59) }}) mi²</div>
+                <div class="display-2 text-game"><b>{{ UTILS.fixed(tweened) }} km²</b></div>
+                <div class="display-6 text-game">({{ UTILS.fixed(tweened / 2.59) }}) mi²</div>
               </div>
             </div>
           </div>
@@ -66,10 +66,18 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
       <!-- Score bar -->
       <div class="position-absolute score-bar start-0 d-flex justify-content-between w-100 px-3 px-lg-4">
         <div class="text-center">
-          <h5 class="text-dark-emphasis">High Score: <span class="text-primary-emphasis"><b>{{ highscore }}</b></span></h5>
+          <h5 class="text-dark-emphasis d-flex m-0">
+            <span class="me-2">High Score:</span>
+            <span class="text-primary-emphasis"><b>{{ highscore }}</b></span>
+          </h5>
         </div>
         <div class="text-center">
-          <h5 class="text-dark-emphasis">Score: <span class="text-primary-emphasis"><b>{{ score }}</b></span></h5>
+          <h5 class="text-dark-emphasis d-flex m-0">
+            <span class="me-2">Score:</span>
+            <Transition name="bounce">
+              <span v-if="animateElements" class="text-primary-emphasis"><b>{{ score }}</b></span>
+            </Transition>
+          </h5>
         </div>
       </div>
     </div>
@@ -81,8 +89,8 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
           <h2>You Scored: <span class="text-primary-emphasis"><b>{{ score }}</b></span></h2>
           <h2>High Score: <span class="text-primary-emphasis"><b>{{ highscore }}</b></span></h2>
           <div class="mt-4">
-            <NuxtLink class="btn btn-primary btn-lg rounded-pill mx-2" to="/">Back to Website</NuxtLink>
-            <a class="btn btn-primary btn-lg rounded-pill mx-2" @click="playAgain()">Play Again</a>
+            <NuxtLink class="btn btn-primary btn-lg rounded-pill mx-2 my-1" to="/">Back to Home</NuxtLink>
+            <a class="btn btn-primary btn-lg rounded-pill mx-2 my-1" @click="playAgain()">Play Again</a>
           </div>
         </div>
       </div>
@@ -96,7 +104,7 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
               <a class="text-dark-emphasis" role="button" @click="openPage(page.path)">{{ page.name }}</a>
             </li>
             <li class="list-inline-item">
-              <span>•</span>
+              <span>|</span>
             </li>
           </template>
         </template>
@@ -132,7 +140,7 @@ export default {
     async reveal (bool) {
       if (bool) {
         const duration = 0.5;
-        await tweenNumber(this, this.right.km2, duration);
+        await UTILS.tweenNumber(this, this.right.km2, duration);
       }
     },
     dark (bool) {
@@ -142,7 +150,7 @@ export default {
     }
   },
   created () {
-    setPageSEO("game");
+    UTILS.setPageSEO("game");
   },
   mounted () {
     this.dark = JSON.parse(localStorage.getItem("dark"));

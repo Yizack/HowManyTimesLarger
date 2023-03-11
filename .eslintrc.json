@@ -20,14 +20,10 @@
     "useHead": "readonly",
     "defineNuxtPlugin": "readonly",
     "useNuxtApp": "readonly",
-    "normalize": "readonly",
     "siteInfo": "readonly",
-    "fixed": "readonly",
-    "compareNumbers": "readonly",
-    "closeModals": "readonly",
-    "tweenNumber": "readonly",
     "API": "readonly",
-    "setPageSEO": "readonly"
+    "CAPACITOR": "readonly",
+    "UTILS": "readonly"
   },
   "plugins": [
     "vue"

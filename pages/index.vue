@@ -32,7 +32,7 @@ definePageMeta({ layout: "main" });
 export default {
   name: "IndexPage",
   created () {
-    setPageSEO("home");
+    UTILS.setPageSEO("home");
   }
 };
 </script>

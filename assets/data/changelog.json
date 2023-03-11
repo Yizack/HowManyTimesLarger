@@ -1,7 +1,23 @@
 {
+  "1.0.2": {
+    "date": "2023-03-11",
+    "changes": [
+      "App is now using Roboto font family.",
+      "Reduced the size of in-game flags on small screens.",
+      "The score number in game now bounces when it is updated."
+    ],
+    "features": [
+      "Android: status color bar has been added and is reactive on theme change."
+    ],
+    "fixes": [
+      "Mobile: on the \"Countries\" tab, searching by name no longer waits for the text field to blur to applying the search filter."
+    ]
+  },
   "1.0.1": {
     "date": "2023-03-10",
-    "changes": ["The logo of the app has been changed."],
+    "changes": [
+      "The logo of the app has been changed."
+    ],
     "features": [],
     "fixes": []
   },

@@ -6,6 +6,18 @@ export default {
   email: "contact@howmanytimeslarger.com",
   issues: "https://github.com/Yizack/HowManyTimesLarger/issues/new",
   pulls: "https://github.com/Yizack/HowManyTimesLarger/pulls",
+  colors: {
+    dark: {
+      body: "#171a1e",
+      primary: "#72C5A2",
+      secondary: "#ECB390"
+    },
+    light: {
+      body: "#ffffff",
+      primary: "#2d9e64",
+      secondary: "#af3c00"
+    }
+  },
   pages: {
     home: {
       name: "Home",

@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto";
+  font-family: "Nunito";
 }
 
 #app {
@@ -44,7 +44,7 @@ main {
   max-height: 200px;
 }
 
-.shape-game, .flag, .shape {
+.flag, .shape, .shape-game, .flag-game {
   user-select: none;
   pointer-events: none;
 }

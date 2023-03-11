@@ -29,7 +29,7 @@ jobs:
         key: build-cache-${{ hashFiles('**/package-lock.json') }}
         
     - name: Setup java ☕
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v3
       with:
         distribution: 'zulu'
         java-version: '11'
@@ -60,7 +60,7 @@ jobs:
       run: jarsigner -keystore android/release.decrypted.jks -storepass "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" -keypass "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" -signedjar ./android/app/build/outputs/bundle/release/app-release-signed.aab ./android/app/build/outputs/bundle/release/app-release.aab howmanytimeslarger
 
     - name: Upload Bundle 📤
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: app-release
         path: android/app/build/outputs/bundle/release/app-release-signed.aab

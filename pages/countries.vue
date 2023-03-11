@@ -11,7 +11,7 @@ definePageMeta({ layout: "main" });
         <div class="d-flex mb-3">
           <div class="input-group">
             <span class="input-group-text bg-body"><FontAwesomeIcon :icon="faMagnifyingGlass" /></span>
-            <input v-model="filter.search" class="form-control form-control-lg bg-body text-dark-emphasis" type="text" placeholder="Type a country or territory...">
+            <input class="form-control form-control-lg bg-body text-dark-emphasis" type="text" placeholder="Type a country or territory..." @input="filter.search = $event.target.value">
           </div>
           <div class="dropdown">
             <a class="btn btn-lg btn-primary ms-3" role="button" data-bs-toggle="dropdown" aria-expanded="false"><FontAwesomeIcon :icon="continents.find(continent => filter.continent === continent.name).icon" width="24" /></a>

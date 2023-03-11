@@ -39,7 +39,7 @@ export default {
       name: "Game",
       title: "Play the game and test your knowledge",
       path: "/game/",
-      description: "Play the game abd test your knowledge about the countries and territories of the world. Beat your highest score. How many times larger is one country than another?",
+      description: "Play the game and test your knowledge about the countries and territories of the world. Beat your highest score. How many times larger is one country than another?",
       keywords: "game, quiz, countries, country, size, comparison, compare, learn, geography, world, map, maps, larger or smaller, higher or lower, score, high score",
       icon: true
     }

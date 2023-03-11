@@ -66,13 +66,13 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
       <!-- Score bar -->
       <div class="position-absolute score-bar start-0 d-flex justify-content-between w-100 px-3 px-lg-4">
         <div class="text-center">
-          <h5 class="text-dark-emphasis d-flex m-0">
+          <h5 class="text-dark-emphasis d-flex">
             <span class="me-2">High Score:</span>
             <span class="text-primary-emphasis"><b>{{ highscore }}</b></span>
           </h5>
         </div>
         <div class="text-center">
-          <h5 class="text-dark-emphasis d-flex m-0">
+          <h5 class="text-dark-emphasis d-flex">
             <span class="me-2">Score:</span>
             <Transition name="bounce">
               <span v-if="animateElements" class="text-primary-emphasis"><b>{{ score }}</b></span>

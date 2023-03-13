@@ -147,6 +147,7 @@ export default {
       useHead({
         bodyAttrs: { "data-bs-theme": bool ? "dark" : "light" }
       });
+      CAPACITOR.setStatusBar(bool);
     }
   },
   created () {
@@ -154,6 +155,7 @@ export default {
   },
   mounted () {
     this.dark = JSON.parse(localStorage.getItem("dark"));
+    CAPACITOR.setStatusBar(this.dark);
     this.left = API.getRandomCountry();
     this.right = API.getRandomCountry(this.left.code_2);
     this.highscore = localStorage.getItem("highscore") || 0;

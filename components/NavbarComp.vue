@@ -15,7 +15,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
         </div>
         <div class="offcanvas-body">
-          <ul class="navbar-nav nav-pills ms-auto">
+          <ul class="navbar-nav nav-pills ms-auto" role="presentation">
             <!-- Pages -->
             <li v-for="page in siteInfo.pages" :key="page.path" class="nav-item" data-bs-dismiss="offcanvas">
               <NuxtLink class="nav-link rounded-pill px-lg-3 text-center text-uppercase" :to="page.path"><AppIcon v-if="page.icon" class="me-2" :dark="dark" /><b>{{ page.name }}</b></NuxtLink>

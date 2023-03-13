@@ -16,9 +16,13 @@ nuxtApp.$router.options.scrollBehavior = (to) => {
 
 <template>
   <!--<LoadingPage v-if="loading"/>-->
+  <NuxtLoadingIndicator :throttle="0" />
   <NuxtLayout>
-    <NuxtLoadingIndicator :throttle="0" />
-    <NuxtPage />
+    <Transition name="page" mode="out-in">
+      <div id="page" :key="$route.fullPath">
+        <NuxtPage />
+      </div>
+    </Transition>
   </NuxtLayout>
 </template>
 
@@ -42,3 +46,25 @@ export default {
   }
 };
 </script>
+
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translate(0, 10px);
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.4s;
+}
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+  transform: translate(-50px, 0);
+}
+</style>

@@ -1,7 +1,9 @@
 <template>
-  <NavbarComp />
-  <slot />
-  <FooterComp />
+  <div id="layout">
+    <NavbarComp />
+    <slot />
+    <FooterComp />
+  </div>
 </template>
 
 <script>

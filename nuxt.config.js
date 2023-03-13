@@ -44,7 +44,8 @@ export default {
         { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#121518" },
         { rel: "shortcut icon", href: "/favicon.ico" }
       ]
-    }
+    },
+    layoutTransition: { name: "layout", mode: "out-in" }
   },
   css: [
     "bootstrap/dist/css/bootstrap.min.css",

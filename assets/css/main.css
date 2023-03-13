@@ -93,8 +93,8 @@ body {
 }
 
 [data-bs-theme="light"] {
-  --bs-body-bg: #f2f1f1;
-  --t: #cde4dc;
+  --bs-body-bg: #fafafa;
+  --bs-tertiary-bg-rgb: 255, 255, 255;
   --bs-secondary-bg-rgb: 205, 228, 220;
   --primary: #2d9e64;
   --primary-rgb: 81, 195, 147;

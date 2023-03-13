@@ -1,5 +1,5 @@
 <script setup>
-import { faMagnifyingGlass, faGlobe, faEarthAmericas, faEarthEurope, faEarthAfrica, faEarthAsia, faEarthOceania, faSnowflake } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faGlobe, faEarthAmericas, faEarthEurope, faEarthAfrica, faEarthAsia, faEarthOceania, faSnowflake, faTimes } from "@fortawesome/free-solid-svg-icons";
 definePageMeta({ layout: "main" });
 </script>
 
@@ -60,13 +60,15 @@ definePageMeta({ layout: "main" });
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header bg-body-tertiary">
-            <h5 class="modal-title">Compare {{ current.name_en }}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+            <h5 class="modal-title">Random <b>{{ current.name_en }}</b></h5>
+            <button type="button" class="btn bg-danger text-white" data-bs-dismiss="modal" aria-label="Close">
+              <FontAwesomeIcon :icon="faTimes" width="16" height="16" />
+            </button>
           </div>
           <div class="modal-body">
             <div class="row g-4">
               <div v-for="country in randomCountries" :key="country.code_2" class="col-md-6">
-                <CountryVS class="bg-body-tertiary" :vs="[current, country]" />
+                <CountryVS :vs="[current, country]" />
               </div>
             </div>
           </div>

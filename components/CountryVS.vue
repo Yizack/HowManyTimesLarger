@@ -3,7 +3,7 @@ import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
 </script>
 
 <template>
-  <NuxtLink class="card card-body p-2 p-md-3 h-100 align-items-center justify-content-center border text-decoration-none text-center text-dark-emphasis" :to="`/compare/${vs[0].code_2}/${vs[1].code_2}/`">
+  <NuxtLink class="card card-body p-2 p-md-3 h-100 align-items-center justify-content-center border text-decoration-none text-center text-dark-emphasis bg-body-tertiary" :to="`/compare/${vs[0].code_2}/${vs[1].code_2}/`">
     <span class="mb-2"><small><b>{{ vs[0].name_en }}</b></small></span>
     <div class="row align-items-center">
       <div class="col-5">

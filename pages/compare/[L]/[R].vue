@@ -44,7 +44,7 @@ definePageMeta({ layout: "main" });
           </div>
         </div>
       </div>
-      <div class="border bg-body-tertiary p-4 rounded text-center">
+      <div class="py-4 rounded text-center">
         <p class="display-6 text-dark-emphasis">Compare <b>{{ params[0].name_en }}</b> with other countries or territories</p>
         <div class="row g-4">
           <div v-for="country in randomCountries" :key="country.code_2" class="col-6 col-md-4 col-lg-3 col-xl-2">

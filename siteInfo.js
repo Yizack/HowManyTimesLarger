@@ -1,4 +1,8 @@
 export default {
+  dev: {
+    name: "Yizack Rangel",
+    url: "https://yizack.com"
+  },
   name: "How Many Times Larger",
   name_short: "HowManyTimesLarger",
   description: "Website and Game for easy country size comparisons.",
@@ -6,6 +10,8 @@ export default {
   email: "contact@howmanytimeslarger.com",
   issues: "https://github.com/Yizack/HowManyTimesLarger/issues/new",
   pulls: "https://github.com/Yizack/HowManyTimesLarger/pulls",
+  gist: "https://gist.github.com/Yizack/bbfce31e0217a3689c8d961a356cb10d",
+  gistPin: "https://gists-readme.yizack.com/api/pin?user=Yizack&id=bbfce31e0217a3689c8d961a356cb10d&owner=true",
   colors: {
     dark: {
       body: "#171a1e",

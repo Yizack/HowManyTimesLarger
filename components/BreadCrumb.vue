@@ -3,7 +3,7 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><NuxtLink to="/"><b>App</b></NuxtLink></li>
       <li v-for="(item, index) in items" :key="index" class="breadcrumb-item">{{ item }}</li>
-      <li v-for="(item, index) in active" :key="index" class="breadcrumb-item active" aria-current="page">{{ item }}</li>
+      <li v-for="(item, index) in active" :key="index" class="breadcrumb-item active text-primary-emphasis" aria-current="page">{{ item }}</li>
     </ol>
   </nav>
 </template>

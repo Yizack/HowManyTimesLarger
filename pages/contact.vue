@@ -8,7 +8,7 @@ definePageMeta({ layout: "main" });
     <section id="contact">
       <div class="container py-4">
         <BreadCrumb :items="['Contact']" />
-        <div class="mx-auto col-xl-8">
+        <div class="mx-auto col-xl-8 bg-body-tertiary border rounded px-3 py-4">
           <div class="text-center mb-4">
             <h1><b>Contact</b></h1>
             <p>Get in touch for everything related to <NuxtLink to="/">{{ siteInfo.name }}</NuxtLink>.</p>

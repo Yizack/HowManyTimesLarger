@@ -14,6 +14,15 @@ definePageMeta({ layout: "main" });
           <div class="text-center mb-4">
             <h1><b>About</b></h1>
           </div>
+          <div v-if="!CAPACITOR.isNative()" class="mb-3">
+            <h4>Is there a mobile app?</h4>
+            <p class="m-0">Yes, there is. For now it is only available on Android but probably in the future it will be available for iOS.</p>
+            <div class="text-center col-6 col-md-3">
+              <a href="https://play.google.com/store/apps/details?id=com.howmanytimeslarger.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+                <img class="img-fluid" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+              </a>
+            </div>
+          </div>
           <div class="mb-5">
             <h4>Credits</h4>
             <ul>
@@ -24,6 +33,7 @@ definePageMeta({ layout: "main" });
               <li>Android and iOS app created using <a href="https://capacitorjs.com/" target="_blank">Capacitor.js</a> after Nuxt3 build.</li>
             </ul>
           </div>
+          <hr>
           <div class="text-center mb-4">
             <h1><b>Changelog</b></h1>
             <p>Tracking updates of {{ siteInfo.name }}.</p>

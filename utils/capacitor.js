@@ -9,6 +9,10 @@ class CapacitorPlugins {
       await StatusBar.setBackgroundColor({ color: isDark ? dark.body : light.body });
     }
   }
+
+  isNative () {
+    return Capacitor.isNativePlatform();
+  }
 }
 
 export const CAPACITOR = new CapacitorPlugins();

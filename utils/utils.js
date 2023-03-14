@@ -106,6 +106,18 @@ class AppUtils {
       this.SEO(page);
     }
   }
+
+  async setDarkMode (isDark = true) {
+    const theme = isDark ? "dark" : "light";
+    useHead({ bodyAttrs: { "data-bs-theme": theme } });
+    await CAPACITOR.setPref("dark", isDark);
+    await CAPACITOR.setStatusBar(isDark);
+  }
+
+  async isDarkMode () {
+    const theme = await CAPACITOR.getPref("dark");
+    return theme === null ? true : theme;
+  }
 }
 
 export const UTILS = new AppUtils();

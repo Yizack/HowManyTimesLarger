@@ -15,7 +15,7 @@ nuxtApp.$router.options.scrollBehavior = (to) => {
 </script>
 
 <template>
-  <!--<LoadingPage v-if="loading"/>-->
+  <LoadingPage v-if="loading" />
   <NuxtLoadingIndicator :throttle="0" />
   <NuxtLayout>
     <Transition name="page" mode="out-in">
@@ -34,13 +34,9 @@ export default {
       loading: true
     };
   },
-  mounted () {
-    if (localStorage.getItem("dark") === null) {
-      localStorage.setItem("dark", true);
-    }
-  },
   beforeMount () {
-    this.$nuxt.hook("page:finish", () => {
+    this.$nuxt.hook("page:finish", async () => {
+      await UTILS.setDarkMode(await UTILS.isDarkMode());
       this.loading = false;
     });
   }

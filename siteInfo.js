@@ -12,6 +12,7 @@ export default {
   pulls: "https://github.com/Yizack/HowManyTimesLarger/pulls",
   gist: "https://gist.github.com/Yizack/bbfce31e0217a3689c8d961a356cb10d",
   gistPin: "https://gists-readme.yizack.com/api/pin?user=Yizack&id=bbfce31e0217a3689c8d961a356cb10d&owner=true",
+  dark: true,
   colors: {
     dark: {
       body: "#171a1e",

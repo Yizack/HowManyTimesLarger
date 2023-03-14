@@ -1,5 +1,6 @@
 import { StatusBar, Style } from "@capacitor/status-bar";
 import { Capacitor } from "@capacitor/core";
+import { Preferences } from "@capacitor/preferences";
 
 class CapacitorPlugins {
   async setStatusBar (isDark) {
@@ -12,6 +13,19 @@ class CapacitorPlugins {
 
   isNative () {
     return Capacitor.isNativePlatform();
+  }
+
+  async setPref (name, value) {
+    await Preferences.set({ key: name, value: JSON.stringify(value) });
+  }
+
+  async getPref (name) {
+    const { value } = await Preferences.get({ key: name });
+    return JSON.parse(value);
+  }
+
+  async removePref (name) {
+    await Preferences.remove({ key: name });
   }
 }
 

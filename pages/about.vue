@@ -56,38 +56,41 @@ definePageMeta({ layout: "main" });
                 <span class="bg-success-subtle text-success-emphasis border border-success rounded-pill px-2 mb-1 me-2"><b>New features</b></span>
                 <span class="bg-danger-subtle text-danger-emphasis border border-danger rounded-pill px-2 mb-1 me-2"><b>Bug fixes</b></span>
               </div>
-              <div v-for="(version, number) in changelog" :key="number" class="border-top p-3 my-4">
-                <div class="d-flex mb-2">
-                  <div class="position-relative">
-                    <h3 class="bg-light-subtle border p-2">{{ number }}</h3>
-                    <span v-if="number === current" class="position-absolute top-0 start-100 translate-middle bg-primary-subtle text-info border border-info px-1 rounded mt-1 small"><b>Current</b></span>
-                  </div><span v-if="version.date" class="align-self-center text-muted-emphasis ms-2"><b>{{ new Date(`${version.date}T00:00:00.000`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) }}</b></span>
-                </div>
-                <div v-if="version.changes.length" class="mb-2">
-                  <div class="d-flex">
-                    <h5 class="bg-warning-subtle text-warning-emphasis border border-warning rounded-pill px-2">Changes</h5>
+              <template v-for="(version, number) in changelog" :key="number">
+                <hr>
+                <div class="p-3 my-4">
+                  <div class="d-flex mb-2">
+                    <div class="position-relative">
+                      <h3 class="bg-light-subtle border p-2">{{ number }}</h3>
+                      <span v-if="number === current" class="position-absolute top-0 start-100 translate-middle bg-primary-subtle text-info border border-info px-1 rounded mt-1 small"><b>Current</b></span>
+                    </div><span v-if="version.date" class="align-self-center text-muted-emphasis ms-2"><b>{{ new Date(`${version.date}T00:00:00.000`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) }}</b></span>
                   </div>
-                  <ul>
-                    <li v-for="note in version.changes" :key="note">{{ note }}</li>
-                  </ul>
-                </div>
-                <div v-if="version.features.length" class="mb-2">
-                  <div class="d-flex">
-                    <h5 class="bg-success-subtle text-success-emphasis border border-success rounded-pill px-2">New</h5>
+                  <div v-if="version.changes.length" class="mb-2">
+                    <div class="d-flex">
+                      <h5 class="bg-warning-subtle text-warning-emphasis border border-warning rounded-pill px-2">Changes</h5>
+                    </div>
+                    <ul class="m-0">
+                      <li v-for="note in version.changes" :key="note">{{ note }}</li>
+                    </ul>
                   </div>
-                  <ul>
-                    <li v-for="note in version.features" :key="note">{{ note }}</li>
-                  </ul>
-                </div>
-                <div v-if="version.fixes.length" class="mb-2">
-                  <div class="d-flex">
-                    <h5 class="bg-danger-subtle text-danger-emphasis border border-danger rounded-pill px-2">Fixes</h5>
+                  <div v-if="version.features.length" class="mb-2">
+                    <div class="d-flex">
+                      <h5 class="bg-success-subtle text-success-emphasis border border-success rounded-pill px-2">New</h5>
+                    </div>
+                    <ul class="m-0">
+                      <li v-for="note in version.features" :key="note">{{ note }}</li>
+                    </ul>
                   </div>
-                  <ul>
-                    <li v-for="note in version.fixes" :key="note">{{ note }}</li>
-                  </ul>
+                  <div v-if="version.fixes.length" class="mb-2">
+                    <div class="d-flex">
+                      <h5 class="bg-danger-subtle text-danger-emphasis border border-danger rounded-pill px-2">Fixes</h5>
+                    </div>
+                    <ul class="m-0">
+                      <li v-for="note in version.fixes" :key="note">{{ note }}</li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
+              </template>
             </div>
           </div>
         </div>

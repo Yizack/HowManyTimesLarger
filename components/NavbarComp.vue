@@ -1,5 +1,6 @@
 <script setup>
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import siteInfo from "../siteInfo";
 </script>
 
 <template>
@@ -39,30 +40,20 @@ export default {
   name: "AppNavbar",
   data () {
     return {
-      dark: true
+      dark: siteInfo.dark
     };
   },
-  computed: {
-    portfolio () {
-      return this.$store.state.portfolio;
-    }
-  },
   watch: {
-    dark (bool) {
-      useHead({
-        bodyAttrs: { "data-bs-theme": bool ? "dark" : "light" }
-      });
-      CAPACITOR.setStatusBar(bool);
+    async dark (bool) {
+      await UTILS.setDarkMode(bool);
     }
   },
-  mounted () {
-    this.dark = JSON.parse(localStorage.getItem("dark"));
-    CAPACITOR.setStatusBar(this.dark);
+  async mounted () {
+    this.dark = await UTILS.isDarkMode();
   },
   methods: {
     toggleTheme () {
       this.dark = !this.dark;
-      localStorage.setItem("dark", this.dark);
     }
   }
 };

@@ -133,7 +133,7 @@ export default {
       correctAnswer: false,
       reveal: false,
       tweened: 0,
-      dark: true
+      dark: siteInfo.dark
     };
   },
   watch: {
@@ -143,22 +143,18 @@ export default {
         await UTILS.tweenNumber(this, this.right.km2, duration);
       }
     },
-    dark (bool) {
-      useHead({
-        bodyAttrs: { "data-bs-theme": bool ? "dark" : "light" }
-      });
-      CAPACITOR.setStatusBar(bool);
+    async dark (bool) {
+      await UTILS.setDarkMode(bool);
     }
   },
   created () {
     UTILS.setPageSEO("game");
   },
-  mounted () {
-    this.dark = JSON.parse(localStorage.getItem("dark"));
-    CAPACITOR.setStatusBar(this.dark);
+  async mounted () {
+    this.dark = await UTILS.isDarkMode();
     this.left = API.getRandomCountry();
     this.right = API.getRandomCountry(this.left.code_2);
-    this.highscore = localStorage.getItem("highscore") || 0;
+    this.highscore = await CAPACITOR.getPref("highscore") || 0;
     this.loaded = true;
     this.animate();
   },
@@ -172,7 +168,7 @@ export default {
     selectOption (correct) {
       this.reveal = true;
       this.correctAnswer = correct;
-      setTimeout(() => {
+      setTimeout(async () => {
         if (correct) {
           this.score++;
           this.left = this.right;
@@ -181,7 +177,7 @@ export default {
         else {
           this.loser = true;
           if (this.score > this.highscore) {
-            localStorage.setItem("highscore", this.score);
+            await CAPACITOR.setPref("highscore", this.score);
             this.highscore = this.score;
           }
         }
@@ -208,7 +204,6 @@ export default {
     },
     toggleTheme () {
       this.dark = !this.dark;
-      localStorage.setItem("dark", this.dark);
     }
   }
 };

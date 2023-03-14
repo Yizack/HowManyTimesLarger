@@ -1,4 +1,14 @@
 {
+  "1.0.4": {
+    "date": "2023-03-14",
+    "changes": [],
+    "features": [
+      "Added a loading screen when the app is loading."
+    ],
+    "fixes": [
+      "Mobile: Fixed an issue that caused the app to not store the highscore when the app was updated."
+    ]
+  },
   "1.0.3": {
     "date": "2023-03-13",
     "changes": [

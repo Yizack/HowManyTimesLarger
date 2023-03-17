@@ -11,3 +11,6 @@ Object.keys(siteInfo.pages).forEach((page) => {
     console.info("Removed for mobile app ./.output/public/compare");
   }
 });
+
+rmSync("./.output/public/sitemap.xml", { recursive: true, force: true });
+console.info("Removed for mobile app ./.output/public/sitemap.xml");

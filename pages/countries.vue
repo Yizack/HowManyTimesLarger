@@ -119,7 +119,7 @@ export default {
         { name: "Antarctica", icon: faSnowflake }
       ],
       filterPage: 1,
-      PerPage: 30
+      PerPage: 45
     };
   },
   computed: {

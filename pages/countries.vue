@@ -32,7 +32,7 @@ definePageMeta({ layout: "main" });
           <h5 v-else class="m-0"><i>No results found</i></h5>
         </div>
         <div class="row g-4">
-          <div v-for="(country, index) in filtered" :id="country.code_2" :key="index" class="col-sm-6 col-lg-6 col-xl-4">
+          <div v-for="(country, index) in filteredPage" :id="country.code_2" :key="index" class="col-12 col-lg-6 col-xl-4">
             <div class="row g-0 bg-body-tertiary position-relative h-100 rounded border" role="button" data-bs-toggle="modal" data-bs-target="#try" @click="updateCurrent(country)">
               <div class="col-5 p-3 p-md-4">
                 <img class="w-100 mb-3 rounded border flag" :src="country.flag" :alt="`Flag of ${country.name_en}`">
@@ -53,6 +53,25 @@ definePageMeta({ layout: "main" });
               </div>
             </div>
           </div>
+        </div>
+        <div v-if="pages > 1" class="d-flex justify-content-center mt-3">
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li v-if="filterPage !== 1" class="page-item">
+                <a class="page-link" href="#" aria-label="Previous" @click="filterPage--">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li v-for="page in pages" :key="page" class="page-item" :class="{ active: filterPage === page }">
+                <a class="page-link" href="#" @click="filterPage = page">{{ page }}</a>
+              </li>
+              <li v-if="filterPage !== pages" class="page-item">
+                <a class="page-link" href="#" aria-label="Next" @click="filterPage++">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </section>
@@ -98,12 +117,20 @@ export default {
         { name: "Asia", icon: faEarthAsia },
         { name: "Oceania", icon: faEarthOceania },
         { name: "Antarctica", icon: faSnowflake }
-      ]
+      ],
+      filterPage: 1,
+      PerPage: 30
     };
   },
   computed: {
     filtered () {
       return API.filterCountries(this.filter.search, this.filter.continent);
+    },
+    filteredPage () {
+      return this.filtered.slice((this.filterPage - 1) * this.PerPage, this.filterPage * this.PerPage);
+    },
+    pages () {
+      return Math.ceil(this.filtered.length / this.PerPage);
     }
   },
   created () {

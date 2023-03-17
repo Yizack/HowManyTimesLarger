@@ -1,4 +1,12 @@
 {
+  "1.0.5": {
+    "date": "2023-03-17",
+    "changes": [
+      "Countries list is now paginated to help with performance."
+    ],
+    "features": [],
+    "fixes": []
+  },
   "1.0.4": {
     "date": "2023-03-14",
     "changes": [],

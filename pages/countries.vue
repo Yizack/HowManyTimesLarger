@@ -17,7 +17,7 @@ definePageMeta({ layout: "main" });
             <a class="btn btn-lg btn-primary ms-3" role="button" data-bs-toggle="dropdown" aria-expanded="false"><FontAwesomeIcon :icon="continents.find(continent => filter.continent === continent.name).icon" width="24" /></a>
             <ul class="dropdown-menu text-dark-emphasis">
               <li v-for="(continent, index) in continents" :key="index" class="d-flex align-items-center">
-                <a class="dropdown-item" role="button" :class="{active: filter.continent === continent.name}" @click="filter.continent = continent.name">
+                <a class="dropdown-item" role="button" :class="{active: filter.continent === continent.name}" @click="filterByContinent(continent.name)">
                   <FontAwesomeIcon :icon="continent.icon" width="24" />
                   <span class="ms-3">
                     {{ continent.name }}
@@ -146,6 +146,10 @@ export default {
       for (let i = 0; i < 6; i++) {
         this.randomCountries.push(API.getRandomCountry(country.code_2));
       }
+    },
+    filterByContinent (name) {
+      this.filter.continent = name;
+      this.filterPage = 1;
     }
   }
 };

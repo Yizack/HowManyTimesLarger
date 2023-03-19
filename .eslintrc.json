@@ -1,71 +1,43 @@
 {
   "env": {
+    "browser": true,
     "node": true,
     "es2021": true,
     "jest": true
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:vue/vue3-essential",
-    "@nuxtjs"
+    "@nuxtjs/eslint-config"
   ],
-  "overrides": [
-  ],
+  "overrides": [{
+    "files": ["*.vue", "*.js"],
+    "rules": {
+      "no-undef": "off"
+    }
+  }],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "globals": {
-    "definePageMeta": "readonly",
-    "useHead": "readonly",
-    "defineNuxtPlugin": "readonly",
-    "useNuxtApp": "readonly",
-    "siteInfo": "readonly",
-    "API": "readonly",
-    "CAPACITOR": "readonly",
-    "UTILS": "readonly"
-  },
-  "plugins": [
-    "vue"
-  ],
+  "plugins": ["vue"],
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "windows"
-    ],
-    "quotes": [
-      "error",
-      "double"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
     "camelcase": "off",
-    "arrow-spacing": [
-      "error",
-      {
-        "before": true,
-        "after": true
-      }
-    ],
-    "no-console": ["error", { "allow": ["info"] }],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "no-console": ["error", {
+      "allow": ["info", "warn"]
+    }],
     "brace-style": ["error", "stroustrup"],
     "no-multi-spaces": "error",
     "space-before-blocks": "error",
     "vue/first-attribute-linebreak": ["error", {
-      "singleline": "ignore",
-      "multiline": "ignore"
+      "singleline": "ignore", "multiline": "ignore"
     }],
-    "vue/max-attributes-per-line": ["error", 
-      {
-        "singleline": 100
-      }
-    ],
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": 100
+    }],
     "vue/singleline-html-element-content-newline": ["off"],
     "vue/no-multiple-template-root": ["off"]
   }

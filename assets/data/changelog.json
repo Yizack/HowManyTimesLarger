@@ -1,4 +1,12 @@
 {
+  "1.0.8": {
+    "date": "2023-03-19",
+    "changes": [],
+    "features": [],
+    "fixes": [
+      "Android: fixed a bug with navigation controls."
+    ]
+  },
   "1.0.7": {
     "date": "2023-03-19",
     "changes": [],

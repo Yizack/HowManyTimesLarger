@@ -29,6 +29,17 @@ writeFileSync("config.yaml", `platforms:
                   release:
         insert: |
           shrinkResources true
+    xml:
+      - file: app/src/main/res/values/styles.xml
+        target: resources/style[@name="AppTheme.NoActionBarLaunch"]
+        inject: |
+          <style name="AppTheme.NoActionBarLaunch" parent="AppTheme.NoActionBar">
+            <item name="android:background">#121518</item>
+            <item name="android:windowActionBar">false</item>
+            <item name="android:windowFullscreen">true</item>
+            <item name="android:windowContentOverlay">@null</item>
+            <item name="android:windowIsTranslucent">true</item>
+          </style>
     copy:
       - src: ../assets/android-xml/values-v31/styles.xml
         dest: app/src/main/res/values-v31/styles.xml

@@ -39,10 +39,5 @@ Please provide additional information such as the browser, device, and operating
 - Device: (PC, Tablet, Phone, etc.)
 - Steps to reproduce the error
 
-# Commands Notes for Dev
-
-Keystore to Base64
-
-```sh
-openssl base64 -A -in howmanytimeslarger.jks -out howmanytimeslarger.jks.txt
-```
+# Demo
+![Demo](assets/screenshots/1.png)

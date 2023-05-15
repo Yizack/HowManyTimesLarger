@@ -1,6 +1,5 @@
 <script setup>
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-import siteInfo from "../siteInfo";
 </script>
 
 <template>
@@ -45,11 +44,11 @@ export default {
   },
   watch: {
     async dark (bool) {
-      await UTILS.setDarkMode(bool);
+      await CONFIG.setDark(bool);
     }
   },
-  async mounted () {
-    this.dark = await UTILS.isDarkMode();
+  mounted () {
+    this.dark = CONFIG.dark;
   },
   methods: {
     toggleTheme () {

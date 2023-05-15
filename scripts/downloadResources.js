@@ -3,7 +3,7 @@ import { get } from "https";
 import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
-const { countries } = require("./assets/data/countries.json");
+const { countries } = require("../assets/data/countries.json");
 
 countries.forEach((country) => {
   const file = createWriteStream(`./public/images/flags/${country.code_2}.svg`);

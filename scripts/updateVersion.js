@@ -2,7 +2,7 @@ import { writeFileSync } from "fs";
 import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
-const packageJson = require("./package.json");
+const packageJson = require("../package.json");
 
 const generateVersionCode = (version) => {
   const [major, minor, patch] = version.split(".");
@@ -29,6 +29,9 @@ writeFileSync("config.yaml", `platforms:
                   release:
         insert: |
           shrinkResources true
+    copy:
+      - src: ../assets/android-xml/values-v31/styles.xml
+        dest: app/src/main/res/values-v31/styles.xml
 `);
 
 console.info("config.yaml created");

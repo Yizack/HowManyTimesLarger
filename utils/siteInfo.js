@@ -1,4 +1,4 @@
-export default {
+export const siteInfo = {
   dev: {
     name: "Yizack Rangel",
     url: "https://yizack.com"

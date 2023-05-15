@@ -97,7 +97,7 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
     </Transition>
     <!-- Pages -->
     <div class="position-absolute start-50 translate-middle-x pages d-flex justify-content-center">
-      <ul class="list-inline m-0">
+      <ul v-if="loaded" class="list-inline m-0">
         <template v-for="page in siteInfo.pages" :key="page.path">
           <template v-if="page.name !== 'Game'">
             <li class="list-inline-item">
@@ -133,7 +133,7 @@ export default {
       correctAnswer: false,
       reveal: false,
       tweened: 0,
-      dark: siteInfo.dark
+      dark: CONFIG.dark
     };
   },
   watch: {
@@ -144,14 +144,13 @@ export default {
       }
     },
     async dark (bool) {
-      await UTILS.setDarkMode(bool);
+      await CONFIG.setDark(bool);
     }
   },
   created () {
     UTILS.setPageSEO("game");
   },
   async mounted () {
-    this.dark = await UTILS.isDarkMode();
     this.left = API.getRandomCountry();
     this.right = API.getRandomCountry(this.left.code_2);
     this.highscore = await CAPACITOR.getPref("highscore") || 0;

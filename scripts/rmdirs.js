@@ -1,5 +1,5 @@
 import { rmSync } from "fs";
-import siteInfo from "./siteInfo.js";
+import siteInfo from "../utils/siteInfo.js";
 
 Object.keys(siteInfo.pages).forEach((page) => {
   if (page !== "home") {

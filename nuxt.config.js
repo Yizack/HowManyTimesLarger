@@ -1,5 +1,5 @@
 import { countries } from "./assets/data/countries.json";
-import siteInfo from "./siteInfo.js";
+import { siteInfo } from "./utils/siteInfo.js";
 
 const routes = ["/"];
 
@@ -49,7 +49,8 @@ export default {
   },
   css: [
     "bootstrap/dist/css/bootstrap.min.css",
-    "~/assets/css/main.css"
+    "~/assets/css/main.css",
+    "~/assets/css/transitions.css"
   ],
   experimental: {
     payloadExtraction: false

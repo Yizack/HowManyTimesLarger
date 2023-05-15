@@ -15,6 +15,10 @@ class CapacitorPlugins {
     return Capacitor.isNativePlatform();
   }
 
+  isAndroid () {
+    return Capacitor.getPlatform() === "android";
+  }
+
   async setPref (name, value) {
     await Preferences.set({ key: name, value: JSON.stringify(value) });
   }

@@ -1,12 +1,12 @@
 import { writeFileSync } from "fs";
 import { createRequire } from "module";
 import xml from "xml";
-import siteInfo from "./siteInfo.js";
+import siteInfo from "../utils/siteInfo.js";
 
 const { url, pages } = siteInfo;
 
 const require = createRequire(import.meta.url);
-const { countries } = require("./assets/data/countries.json");
+const { countries } = require("../assets/data/countries.json");
 
 const outFile = "public/sitemap.xml";
 const date = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Panama" }));

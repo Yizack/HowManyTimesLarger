@@ -41,6 +41,8 @@ writeFileSync("config.yaml", `platforms:
             <item name="android:windowIsTranslucent">true</item>
           </style>
     copy:
+      - src: ../assets/android-xml/drawable-v23/launch_screen.xml
+        dest: app/src/main/res/drawable-v23/launch_screen.xml
       - src: ../assets/android-xml/values-v31/styles.xml
         dest: app/src/main/res/values-v31/styles.xml
 `);

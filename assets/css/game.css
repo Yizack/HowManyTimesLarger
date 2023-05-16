@@ -110,12 +110,13 @@
 }
 
 .vs-container {
-  background-color: var(--bs-heading-color);
+  background-color: var(--bs-dark-text-emphasis);
   color: var(--bs-body-bg)!important;
 }
 
 .vs-container h1 {
   color: var(--bs-body-bg);
+  line-height: 0;
 }
 
 .text-game {
@@ -125,7 +126,7 @@
 }
 
 [data-bs-theme="dark"] .text-game {
-  color: var(--bs-primary-text);
+  color: var(--bs-primary-text-emphasis);
 }
 
 .flag-game {

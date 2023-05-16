@@ -43,7 +43,7 @@
     "@nuxtjs/eslint-config": "^12.0.0",
     "@trapezedev/configure": "^7.0.10",
     "eslint": "^8.40.0",
-    "nuxt": "^3.4.3",
+    "nuxt": "^3.5.0",
     "stylelint": "^15.6.1",
     "xml": "^1.0.1"
   },

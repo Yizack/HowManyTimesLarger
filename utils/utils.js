@@ -34,18 +34,13 @@ class AppUtils {
     return string.normalize("NFD").replace(/[\u0300-\u036F]/g, "");
   }
 
-  closeModals () {
-    const nuxtApp = useNuxtApp();
-    const modals = document.querySelectorAll(".modal.show");
-    if (modals.length) {
-      modals.forEach((modal) => {
-        const instance = nuxtApp.$Modal.getInstance(modal);
-        if (instance) {
-          instance.hide();
-        }
-      });
+  hideModal (id) {
+    const { $Modal } = useNuxtApp();
+    const instance = $Modal.getInstance("#" + id);
+    if (instance) {
+      instance.hide();
     }
-  }
+  };
 
   async tweenNumber (ctx, end, duration) {
     while (ctx.tweened < end) {

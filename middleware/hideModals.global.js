@@ -5,7 +5,7 @@ export default defineNuxtRouteMiddleware(() => {
   const modals = document.querySelectorAll(".modal.show");
   if (modals) {
     modals.forEach(({ id }) => {
-      hideModal(id);
+      UTILS.hideModal(id);
     });
   }
 });

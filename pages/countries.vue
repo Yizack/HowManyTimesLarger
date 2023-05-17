@@ -137,9 +137,6 @@ export default {
   created () {
     UTILS.setPageSEO("countries");
   },
-  beforeUnmount () {
-    UTILS.closeModals();
-  },
   methods: {
     updateCurrent (country) {
       this.current = country;

@@ -17,7 +17,7 @@ if (CAPACITOR.isAndroid()) {
   <NuxtLoadingIndicator :throttle="0" />
   <NuxtLayout>
     <Transition name="page" mode="out-in">
-      <div id="page" :key="$route.fullPath">
+      <div id="page">
         <NuxtPage />
       </div>
     </Transition>

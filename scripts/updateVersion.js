@@ -32,7 +32,7 @@ writeFileSync("config.yaml", `platforms:
     xml:
       - file: app/src/main/res/values/styles.xml
         target: resources/style[@name="AppTheme.NoActionBarLaunch"]
-        inject: |
+        replace: |
           <style name="AppTheme.NoActionBarLaunch" parent="AppTheme.NoActionBar">
             <item name="android:background">#121518</item>
             <item name="android:windowActionBar">false</item>

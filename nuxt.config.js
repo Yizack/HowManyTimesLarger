@@ -1,20 +1,7 @@
-import { countries } from "./assets/data/countries.json";
 import { siteInfo } from "./utils/siteInfo.js";
-
-const routes = ["/"];
-
-countries.forEach((left) => {
-  countries.forEach((right) => {
-    if (left.code_2 !== right.code_2) {
-      routes.push(`/compare/${left.code_2}/${right.code_2}/`);
-    }
-  });
-});
 
 export default {
   app: {
-    rootId: "app",
-    buildAssetsDir: "/_app/",
     head: {
       title: siteInfo.name,
       htmlAttrs: {
@@ -54,11 +41,5 @@ export default {
   ],
   experimental: {
     payloadExtraction: false
-  },
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes
-    }
   }
 };

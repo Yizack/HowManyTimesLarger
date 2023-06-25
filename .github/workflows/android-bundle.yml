@@ -1,4 +1,4 @@
-name: Build
+name: Android Bundle
 
 on:
   push:
@@ -45,15 +45,7 @@ jobs:
       run: pnpm install
 
     - name: Build App ⚡
-      run: |
-        pnpm sitemap
-        pnpm generate
-
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: .output/public
+      run: pnpm generate
         
     - name: Setup java ☕
       uses: actions/setup-java@v3

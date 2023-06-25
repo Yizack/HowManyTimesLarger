@@ -1,8 +1,8 @@
 <script setup>
 import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
-const route = useRoute();
+const { codes } = useRoute().params;
 
-if (route.params.codes.length > 2 || !route.params.codes.length) {
+if (!codes.length || (codes.length > 2 && codes[2] !== "")) {
   throw createError({
     statusCode: 404,
     message: "Page not found",

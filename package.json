@@ -16,7 +16,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --port=5173",
-    "generate": "nuxt generate",
+    "generate": "node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.mjs generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "sitemap": "node scripts/generateSitemap.js",

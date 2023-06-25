@@ -1,5 +1,15 @@
 <script setup>
 import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
+const route = useRoute();
+
+if (route.params.codes.length > 2 || !route.params.codes.length) {
+  throw createError({
+    statusCode: 404,
+    message: "Page not found",
+    fatal: true
+  });
+}
+
 definePageMeta({ layout: "main" });
 </script>
 
@@ -62,8 +72,8 @@ export default {
   data () {
     return {
       params: [
-        API.getCountryByCode(this.$route.params.L.toLocaleUpperCase()),
-        API.getCountryByCode(this.$route.params.R.toLocaleUpperCase())
+        API.getCountryByCode(this.$route.params.codes[0].toLocaleUpperCase()),
+        API.getCountryByCode(this.$route.params.codes[1].toLocaleUpperCase())
       ],
       compared: {},
       randomCountries: []

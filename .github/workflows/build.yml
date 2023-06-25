@@ -5,7 +5,6 @@ on:
     branches: [ main ]
 
 jobs:
-  # Build App
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -15,41 +14,81 @@ jobs:
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@v3
-      with:
-        persist-credentials: false
-
-    - name: Check Dependencies Cache ☁️
-      uses: actions/cache@v3
-      id: cache
-      with:
-        path: ./
-        key: build-cache-${{ hashFiles('**/package-lock.json') }}
 
     - name: Setup Node 🐢
-      if: steps.cache.outputs.cache-hit != 'true'
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+    
+    - name: PNPM Setup 🟨
+      uses: pnpm/action-setup@v2
+      id: pnpm-install
+      with:
+        version: 8
+        run_install: false
+
+    - name: Get pnpm store directory 📁
+      id: pnpm-cache
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+    - uses: actions/cache@v3
+      name: Setup pnpm Cache ☁️
+      with:
+        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
 
     - name: Install Dependencies 📦
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: npm ci
+      run: pnpm install
 
     - name: Build App ⚡
       run: |
-        npm run sitemap
-        npm run generate
-
-    - name: Save Primes ☁️
-      id: cache-primes-save
-      if: steps.cache.outputs.cache-hit != 'true'
-      uses: actions/cache/save@v3
-      with:
-        path: ./
-        key: build-cache-${{ hashFiles('**/package-lock.json') }}
+        pnpm sitemap
+        pnpm generate
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages
         folder: .output/public
+        
+    - name: Setup java ☕
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+
+    - name: Capacitor 📲
+      run: |
+          pnpm android
+          pnpm resources
+          pnpm sync
+
+    - name: Version App 🔢
+      run: |
+          pnpm versionApp
+          pnpm trapeze
+
+    - name: Bundle Android App 📦
+      run: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew app:bundleRelease --stacktrace
+
+    - name: Extract Android Signing Key 🔑
+      run: |
+        echo "${{ secrets.RELEASE_KEYSTORE }}" > android/release.jks.base64
+        base64 -d android/release.jks.base64 > android/release.decrypted.jks
+
+    - name: Sign Build 🔐
+      run: jarsigner -keystore android/release.decrypted.jks -storepass "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" -keypass "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" -signedjar ./android/app/build/outputs/bundle/release/app-release-signed.aab ./android/app/build/outputs/bundle/release/app-release.aab howmanytimeslarger
+
+    - name: Upload Bundle 📤
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-release
+        path: android/app/build/outputs/bundle/release/app-release-signed.aab
+        retention-days: 1

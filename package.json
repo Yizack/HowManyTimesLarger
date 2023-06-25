@@ -14,9 +14,9 @@
     "url": "https://github.com/Yizack/HowManyTimesLarger/issues"
   },
   "scripts": {
-    "build": "nuxt build",
+    "build": "pnpm sitemap && nuxt build",
     "dev": "nuxt dev --port=5173",
-    "generate": "node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.mjs generate",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "sitemap": "node scripts/generateSitemap.js",
@@ -25,10 +25,7 @@
     "resources": "npx @capacitor/assets generate --android",
     "versionApp": "node scripts/updateVersion.js",
     "trapeze": "npx trapeze run config.yaml -y",
-    "sync": "node scripts/rmdirs.js && npx cap sync",
-    "patch": "npm version patch",
-    "minor": "npm version minor",
-    "major": "npm version major"
+    "sync": "node scripts/rmdirs.js && npx cap sync"
   },
   "devDependencies": {
     "@capacitor/android": "^5.0.5",

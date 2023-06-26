@@ -26,7 +26,6 @@ if (CAPACITOR.isAndroid()) {
 
 <script>
 export default {
-  name: "App",
   data () {
     return {
       loading: true

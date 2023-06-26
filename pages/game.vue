@@ -1,5 +1,6 @@
 <script setup>
 import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+UTILS.setPageSEO("game");
 </script>
 
 <template>
@@ -120,7 +121,6 @@ import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortaw
 
 <script>
 export default {
-  name: "GamePage",
   data () {
     return {
       left: {},
@@ -146,9 +146,6 @@ export default {
     async dark (bool) {
       await CONFIG.setDark(bool);
     }
-  },
-  created () {
-    UTILS.setPageSEO("game");
   },
   async mounted () {
     this.left = API.getRandomCountry();

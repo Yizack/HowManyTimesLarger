@@ -2,6 +2,7 @@
 import changelog from "~/assets/data/changelog.json";
 import { version as current } from "~/package.json";
 definePageMeta({ layout: "main" });
+UTILS.setPageSEO("about");
 </script>
 
 <template>
@@ -98,12 +99,3 @@ definePageMeta({ layout: "main" });
     </section>
   </main>
 </template>
-
-<script>
-export default {
-  name: "ContactPage",
-  created () {
-    UTILS.setPageSEO("about");
-  }
-};
-</script>

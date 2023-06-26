@@ -1,5 +1,6 @@
 <script setup>
 definePageMeta({ layout: "main" });
+UTILS.setPageSEO("contact");
 </script>
 
 <template>
@@ -34,12 +35,3 @@ definePageMeta({ layout: "main" });
     </section>
   </main>
 </template>
-
-<script>
-export default {
-  name: "ContactPage",
-  created () {
-    UTILS.setPageSEO("contact");
-  }
-};
-</script>

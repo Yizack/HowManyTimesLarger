@@ -1,6 +1,7 @@
 <script setup>
 import { faMagnifyingGlass, faGlobe, faEarthAmericas, faEarthEurope, faEarthAfrica, faEarthAsia, faEarthOceania, faSnowflake, faTimes } from "@fortawesome/free-solid-svg-icons";
 definePageMeta({ layout: "main" });
+UTILS.setPageSEO("countries");
 </script>
 
 <template>
@@ -99,7 +100,6 @@ definePageMeta({ layout: "main" });
 
 <script>
 export default {
-  name: "CountriesPage",
   data () {
     return {
       current: {},
@@ -133,9 +133,6 @@ export default {
     pages () {
       return Math.ceil(this.filtered.length / this.PerPage);
     }
-  },
-  created () {
-    UTILS.setPageSEO("countries");
   },
   methods: {
     updateCurrent (country) {

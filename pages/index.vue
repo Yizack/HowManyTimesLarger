@@ -1,5 +1,6 @@
 <script setup>
 definePageMeta({ layout: "main" });
+UTILS.setPageSEO("home");
 </script>
 
 <template>
@@ -29,12 +30,3 @@ definePageMeta({ layout: "main" });
     </main>
   </div>
 </template>
-
-<script>
-export default {
-  name: "IndexPage",
-  created () {
-    UTILS.setPageSEO("home");
-  }
-};
-</script>

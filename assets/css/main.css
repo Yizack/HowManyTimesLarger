@@ -1,29 +1,10 @@
-:root {
+:root * {
   --bs-primary: var(--primary);
   --dark: #121518;
   --bs-primary-rgb: var(--primary-rgb);
   --bs-secondary-rgb: var(--bs-primary-text-rgb-emphasis);
   scrollbar-color: var(--bs-dark-text-emphasis) var(--bs-secondary-bg);
   scrollbar-width: auto;
-}
-
-body {
-  font-family: "Nunito";
-}
-
-#layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
-#app {
-  height: 100vh;
-  position: relative;
-}
-
-#page {
-  flex: 1 0 0;
 }
 
 *::-webkit-scrollbar {
@@ -51,6 +32,25 @@ body {
   color: #fff!important;
 }
 
+body {
+  font-family: "Nunito";
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+#app {
+  height: 100vh;
+  position: relative;
+}
+
+#page {
+  flex: 1 0 0;
+}
+
 .shape {
   max-width: 100%;
   width: -moz-fit-content;
@@ -63,14 +63,6 @@ body {
   pointer-events: none;
 }
 
-[data-bs-theme="dark"] .shape {
-  filter: invert(1);
-}
-
-[data-bs-theme="light"] .shape {
-  filter: contrast(0.7);
-}
-
 @media (min-width: 992px) {
   /* lg */
 
@@ -81,51 +73,6 @@ body {
 
 .breadcrumb-item a {
   text-decoration: none;
-}
-
-[data-bs-theme="dark"] {
-  --bs-body-bg: #121518;
-  --bs-body-bg-rgb: 23, 26, 30;
-  --bs-dark-rgb: 18, 21, 25;
-  --bs-secondary-bg-rgb: 23, 26, 30;
-  --bs-tertiary-bg-rgb: 18, 21, 25;
-  --primary: #2d9e64;
-  --primary-rgb: 81, 195, 147;
-  --primary-focus: rgb(45 158 100 / 25%);
-  --primary-hover: #2b8858;
-  --primary-disabled: #578b75;
-  --bs-primary-text-emphasis: #ecb390;
-  --bs-dark-text-emphasis: #fafafa;
-  --bs-primary-text-rgb-emphasis: 236, 179, 144;
-  --bs-link-color: #51c393;
-  --bs-link-color-rgb: 81, 195, 147;
-  --bs-link-hover-color: #72c5a2;
-  --bs-link-hover-color-rgb: 114, 197, 162;
-  --bs-heading-color: #fafafa;
-}
-
-[data-bs-theme="light"] {
-  --bs-body-bg: #fafafa;
-  --bs-tertiary-bg-rgb: 255, 255, 255;
-  --bs-secondary-bg-rgb: 205, 228, 220;
-  --primary: #2d9e64;
-  --primary-rgb: 81, 195, 147;
-  --primary-focus: rgb(45 158 100 / 25%);
-  --primary-hover: #2eaa6a;
-  --primary-disabled: #578b75;
-  --bs-primary-text-emphasis: #af3c00;
-  --bs-primary-text-rgb-emphasis: 175, 60, 0;
-  --bs-dark-text-emphasis: #121518;
-  --bs-link-color: #2d9e64;
-  --bs-link-color-rgb: 45, 158, 100;
-  --bs-link-hover-color: rgb(8, 128, 66);
-  --bs-link-hover-color-rgb: 8, 128, 66;
-  --bs-heading-color: var(--bs-body-color);
-  --bs-secondary-color: #9da8b3;
-}
-
-[data-bs-theme="dark"] .shadow {
-  box-shadow: 0 .5rem 1rem rgba(255, 255, 255,.15)!important;
 }
 
 .pagination {
@@ -147,20 +94,6 @@ body {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: var(--primary-disabled);
   --bs-btn-disabled-border-color: var(--primary-disabled);
-}
-
-[data-bs-theme="dark"] .dropdown-menu, [data-bs-theme="light"] .dropdown-menu {
-  --bs-dropdown-link-active-bg: var(--primary);
-}
-
-[data-bs-theme="light"] .form-control:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 0.25rem rgb(81 195 147 / 25%);
-}
-
-[data-bs-theme="dark"] .form-control:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 0.25rem rgb(114 197 162 / 25%);
 }
 
 .nuxt-loading-indicator {

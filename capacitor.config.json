@@ -2,7 +2,10 @@
   "appId": "com.howmanytimeslarger.app",
   "appName": "How Many Times Larger",
   "webDir": ".output/public",
-  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "hostname": "howmanytimeslarger.com"
+  },
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 1000,

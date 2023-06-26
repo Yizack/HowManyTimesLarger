@@ -27,7 +27,7 @@ UTILS.setPageSEO("about");
             </div>
             <div v-if="!CAPACITOR.isNative()" class="mb-3">
               <h4>Is there a mobile app?</h4>
-              <p class="m-0">Yes, there is. For now it is only available on Android but probably in the future it will be available for iOS.</p>
+              <p class="m-0">Yes, there is. For now it is only available on Android.</p>
               <div class="text-center col-6 col-md-3">
                 <a href="https://play.google.com/store/apps/details?id=com.howmanytimeslarger.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
                   <img class="img-fluid" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
@@ -37,12 +37,13 @@ UTILS.setPageSEO("about");
             <div>
               <h4>Credits</h4>
               <ul>
-                <li>Web app developed with <a href="https://nuxtjs.com/" target="_blank">Nuxt.js</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.</li>
+                <li>Web app developed with <a href="https://nuxt.com/" target="_blank">Nuxt</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.</li>
+                <li>Hosted on <a href="https://cloudflare.com/" target="_blank">Cloudflare Pages</a>.</li>
                 <li>Most flags were downloaded from <a href="https://countryflagsapi.com" target="_blank">countryflagsapi.com</a>. Missing flags obtained from Wikimedia.</li>
                 <li>Most country and territory shapes were downloaded from <a href="https://mylifeelsewhere.com" target="_blank">mylifeelsewhere.com</a>.</li>
                 <li>Icons from <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>.</li>
                 <li>Game was inspired by <a href="https://www.higherlowergame.com/" target="_blank">The Higher Lower Game</a>.</li>
-                <li>Android and iOS app created using <a href="https://capacitorjs.com/" target="_blank">Capacitor.js</a>.</li>
+                <li>Android app created using <a href="https://capacitorjs.com/" target="_blank">Capacitor.js</a>.</li>
               </ul>
             </div>
           </div>

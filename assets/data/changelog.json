@@ -2,7 +2,8 @@
   "1.0.10": {
     "date": "2023-05-17",
     "changes": [
-      "Android: fixed app splash screen."
+      "Android: fixed app splash screen.",
+      "Android: Fixed back pressed button."
     ],
     "features": [],
     "fixes": []

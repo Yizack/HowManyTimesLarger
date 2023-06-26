@@ -1,3 +1,4 @@
+import { App } from "@capacitor/app";
 import { StatusBar, Style } from "@capacitor/status-bar";
 import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
@@ -30,6 +31,14 @@ class CapacitorPlugins {
 
   async removePref (name) {
     await Preferences.remove({ key: name });
+  }
+
+  exit () {
+    App.exitApp();
+  }
+
+  onBack (callback = () => {}) {
+    App.addListener("backButton", ({ canGoBack }) => callback(canGoBack));
   }
 }
 

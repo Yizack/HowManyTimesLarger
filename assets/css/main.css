@@ -1,3 +1,12 @@
+:root {
+  --bs-primary: var(--primary);
+  --dark: #121518;
+  --bs-primary-rgb: var(--primary-rgb);
+  --bs-secondary-rgb: var(--bs-primary-text-rgb-emphasis);
+  scrollbar-color: var(--bs-dark-text-emphasis) var(--bs-secondary-bg);
+  scrollbar-width: auto;
+}
+
 body {
   font-family: "Nunito";
 }
@@ -18,17 +27,17 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  border-radius: 8px;
+  background-color: var(--bs-secondary-bg);
 }
 
 *::-webkit-scrollbar-thumb {
   height: 56px;
   border-radius: 8px;
-  border: 4px solid transparent;
+  border: 0 solid transparent;
   background-clip: content-box;
   background-color: var(--bs-dark-text-emphasis);
 }
@@ -117,13 +126,6 @@ body {
 
 [data-bs-theme="dark"] .shadow {
   box-shadow: 0 .5rem 1rem rgba(255, 255, 255,.15)!important;
-}
-
-* {
-  --bs-primary: var(--primary);
-  --dark: #121518;
-  --bs-primary-rgb: var(--primary-rgb);
-  --bs-secondary-rgb: var(--bs-primary-text-rgb-emphasis);
 }
 
 .pagination {

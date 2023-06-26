@@ -21,4 +21,4 @@ class Config {
   }
 }
 
-export const CONFIG = new Config({ dark: false });
+export const CONFIG = new Config({ dark: true });

@@ -5,7 +5,7 @@ class Config {
 
   async load () {
     this.config = {
-      dark: await CAPACITOR.getPref("dark") || false
+      dark: await CAPACITOR.getPref("dark").catch(() => this.config.dark)
     };
     await this.setDark(this.config.dark);
   }

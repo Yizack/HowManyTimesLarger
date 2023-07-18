@@ -1,6 +1,6 @@
 import { siteInfo } from "./utils/siteInfo.js";
 
-export default {
+export default defineNuxtConfig({
   app: {
     head: {
       title: siteInfo.name,
@@ -42,6 +42,7 @@ export default {
     "~/assets/css/theme-light.css"
   ],
   experimental: {
-    payloadExtraction: false
+    payloadExtraction: false,
+    inlineSSRStyles: false
   }
-};
+});

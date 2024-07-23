@@ -95,7 +95,7 @@ class AppUtils {
       const { url, pages } = siteInfo;
       const { title, description, keywords } = pages[page];
       const pageUrl = pages[page].path === "/" ? url : `${url}${pages[page].path}`;
-      this.SEO({ title, description, keywords, pageUrl });
+      this.SEO({ title, description, keywords, page_url: pageUrl });
     }
     else if (typeof page === "object") {
       this.SEO(page);

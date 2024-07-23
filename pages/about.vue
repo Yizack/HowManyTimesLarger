@@ -1,5 +1,5 @@
 <script setup>
-import changelog from "~/assets/data/changelog.json";
+// import changelog from "~/assets/data/changelog.json";
 import { version as current } from "~/package.json";
 
 definePageMeta({ layout: "main" });
@@ -9,7 +9,7 @@ UTILS.setPageSEO("about");
 <template>
   <main id="wrapper">
     <!-- Try -->
-    <section id="contact">
+    <section id="about">
       <div class="container py-4">
         <BreadCrumb :items="['About']" />
         <div class="mx-auto col-xl-8">
@@ -48,7 +48,7 @@ UTILS.setPageSEO("about");
               </ul>
             </div>
           </div>
-          <div id="about" class="bg-body-tertiary border rounded px-3 py-4">
+          <div v-if="changelog" id="changelog" class="bg-body-tertiary border rounded px-3 py-4">
             <div class="text-center">
               <h1><b>Changelog</b></h1>
               <p>Tracking updates of {{ siteInfo.name }}.</p>

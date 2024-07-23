@@ -36,28 +36,28 @@ export const siteInfo = {
     countries: {
       name: "Countries",
       title: "Learn about the countries and territories of the world",
-      path: "/countries/",
+      path: "/countries",
       description: "Learn about the countries and territories of the world. Flags, shape, continent, capital, area, and more.",
       keywords: "countries, country, flags, shapes, map, maps, area, capital, continent, dial code"
     },
     about: {
       name: "About",
       title: "About",
-      path: "/about/",
+      path: "/about",
       description: "Know more about the developer of How Many Times Larger, the website, the game, changelog, and more.",
       keywords: "about, developer, website, game, quiz, countries, country, size, comparison, compare, learn, geography, world, map, maps, larger or smaller, higher or lower, score, high score"
     },
     contact: {
       name: "Contact",
       title: "Contact, Report a Bug, or Suggest a Feature",
-      path: "/contact/",
+      path: "/contact",
       description: "Contact the developer of How Many Times Larger. Send a message, report a bug, or suggest a feature.",
       keywords: "contact, message, bug, feature, suggestion, developer, github, issues"
     },
     game: {
       name: "Game",
       title: "Play the game and test your knowledge",
-      path: "/game/",
+      path: "/game",
       description: "Play the game and test your knowledge about the countries and territories of the world. Beat your highest score. How many times larger is one country than another?",
       keywords: "game, quiz, countries, country, size, comparison, compare, learn, geography, world, map, maps, larger or smaller, higher or lower, score, high score",
       icon: true

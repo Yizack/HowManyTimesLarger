@@ -1,5 +1,5 @@
 {
-  "appId": "com.yizack.howmanytimeslarger",
+  "appId": "com.howmanytimeslarger.app",
   "appName": "How Many Times Larger",
   "webDir": ".output/public",
   "server": {

@@ -18,7 +18,7 @@ Currently, there are a total of **251** countries, including territories.
 - Antarctica: **4**
 
 # Credits
-- Most flags were downloaded from [countryflagsapi.com](https://countryflagsapi.com/). Missing flags obtained from Wikimedia.
+- Most flags were downloaded from [countryflagsapi.netlify.app](https://countryflagsapi.netlify.app/). Missing flags obtained from Wikimedia.
 - Most country and territory shapes were downloaded from [mylifeelsewhere.com](https://mylifeelsewhere.com/).
 - Icons from [Font Awesome](https://fontawesome.com/).
 - Game was inspired by [The Higher Lower Game](https://www.higherlowergame.com/).

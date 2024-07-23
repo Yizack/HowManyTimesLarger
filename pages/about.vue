@@ -40,7 +40,7 @@ UTILS.setPageSEO("about");
               <ul>
                 <li>Web app developed with <a href="https://nuxt.com/" target="_blank">Nuxt</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.</li>
                 <li>Hosted on <a href="https://cloudflare.com/" target="_blank">Cloudflare Pages</a>.</li>
-                <li>Most flags were downloaded from <a href="https://countryflagsapi.com" target="_blank">countryflagsapi.com</a>. Missing flags obtained from Wikimedia.</li>
+                <li>Most flags were downloaded from <a href="https://countryflagsapi.netlify.app" target="_blank">countryflagsapi.netlify.app</a>. Missing flags obtained from Wikimedia.</li>
                 <li>Most country and territory shapes were downloaded from <a href="https://mylifeelsewhere.com" target="_blank">mylifeelsewhere.com</a>.</li>
                 <li>Icons from <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>.</li>
                 <li>Game was inspired by <a href="https://www.higherlowergame.com/" target="_blank">The Higher Lower Game</a>.</li>

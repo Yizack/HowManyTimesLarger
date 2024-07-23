@@ -40,7 +40,7 @@ class AppUtils {
     if (instance) {
       instance.hide();
     }
-  };
+  }
 
   async tweenNumber (ctx, end, duration) {
     while (ctx.tweened < end) {
@@ -56,10 +56,10 @@ class AppUtils {
   }
 
   SEO (head) {
-    const { name, name_short } = siteInfo;
-    const page_title = `${head.title} | ${name_short}`;
+    const { name, nameShort } = siteInfo;
+    const pageTitle = `${head.title} | ${nameShort}`;
     useHead({
-      title: page_title,
+      title: pageTitle,
       meta: [
         { hid: "description", name: "description", content: head.description },
         { hid: "keywords", name: "keywords", content: head.keywords },
@@ -78,7 +78,7 @@ class AppUtils {
         // Twiter Card
         { name: "twitter:card", content: "summary" },
         // { name: "twitter:site", content: `@${SITE.twitter}` },
-        { name: "twitter:title", content: page_title },
+        { name: "twitter:title", content: pageTitle },
         { name: "twitter:description", content: head.description }
         /* TODO: Add cover image
         { name: "twitter:image", content: `${SITE.url}/${SITE.logo}` }
@@ -94,8 +94,8 @@ class AppUtils {
     if (typeof page === "string") {
       const { url, pages } = siteInfo;
       const { title, description, keywords } = pages[page];
-      const page_url = pages[page].path === "/" ? url : `${url}${pages[page].path}`;
-      this.SEO({ title, description, keywords, page_url });
+      const pageUrl = pages[page].path === "/" ? url : `${url}${pages[page].path}`;
+      this.SEO({ title, description, keywords, pageUrl });
     }
     else if (typeof page === "object") {
       this.SEO(page);

@@ -25,7 +25,9 @@
     "resources": "npx @capacitor/assets generate --android",
     "versionApp": "node scripts/updateVersion.js",
     "trapeze": "npx trapeze run config.yaml -y",
-    "sync": "node scripts/rmdirs.js && npx cap sync"
+    "sync": "node scripts/rmdirs.js && npx cap sync",
+    "lint": "pnpm lint:eslint --fix",
+    "lint:eslint": "eslint"
   },
   "devDependencies": {
     "@capacitor/android": "^6.1.1",
@@ -37,6 +39,7 @@
     "@capacitor/preferences": "^6.0.1",
     "@capacitor/splash-screen": "^6.0.1",
     "@capacitor/status-bar": "^6.0.0",
+    "@nuxt/eslint": "^0.3.13",
     "@nuxt/eslint-config": "^0.3.13",
     "@trapezedev/configure": "^7.0.10",
     "eslint": "^9.7.0",

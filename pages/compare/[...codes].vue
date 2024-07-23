@@ -1,5 +1,6 @@
 <script setup>
 import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 const { codes } = useRoute().params;
 
 if (!codes.length || (codes.length > 2 && codes[2] !== "")) {

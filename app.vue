@@ -18,6 +18,7 @@ if (CAPACITOR.isAndroid()) {
     <NuxtLoadingIndicator :throttle="0" />
     <NuxtLayout>
       <Transition name="page" mode="out-in">
+        <!-- eslint-disable-next-line vue/require-toggle-inside-transition -->
         <div id="page">
           <NuxtPage />
         </div>

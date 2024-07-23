@@ -1,5 +1,6 @@
 <script setup>
 import { faCaretUp, faCaretDown, faCheck, faTimes, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+
 UTILS.setPageSEO("game");
 </script>
 

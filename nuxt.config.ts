@@ -34,6 +34,9 @@ export default defineNuxtConfig({
     },
     layoutTransition: { name: "layout", mode: "out-in" }
   },
+  modules: [
+    "@nuxt/eslint"
+  ],
   css: [
     "bootstrap/dist/css/bootstrap.min.css",
     "~/assets/css/main.css",

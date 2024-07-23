@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware(() => {
-  if (process.server) {
+  if (import.meta.server) {
     return;
   }
   const modals = document.querySelectorAll(".modal.show");

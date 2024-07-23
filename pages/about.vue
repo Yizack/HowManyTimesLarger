@@ -1,6 +1,7 @@
 <script setup>
 import changelog from "~/assets/data/changelog.json";
 import { version as current } from "~/package.json";
+
 definePageMeta({ layout: "main" });
 UTILS.setPageSEO("about");
 </script>

@@ -1,5 +1,6 @@
 <script setup>
 import { faMagnifyingGlass, faGlobe, faEarthAmericas, faEarthEurope, faEarthAfrica, faEarthAsia, faEarthOceania, faSnowflake, faTimes } from "@fortawesome/free-solid-svg-icons";
+
 definePageMeta({ layout: "main" });
 UTILS.setPageSEO("countries");
 </script>
@@ -18,7 +19,7 @@ UTILS.setPageSEO("countries");
             <a class="btn btn-lg btn-primary ms-3" role="button" data-bs-toggle="dropdown" aria-expanded="false"><FontAwesomeIcon :icon="continents.find(continent => filter.continent === continent.name).icon" width="24" /></a>
             <ul class="dropdown-menu text-dark-emphasis">
               <li v-for="(continent, index) in continents" :key="index" class="d-flex align-items-center">
-                <a class="dropdown-item" role="button" :class="{active: filter.continent === continent.name}" @click="filter.continent = continent.name">
+                <a class="dropdown-item" role="button" :class="{ active: filter.continent === continent.name }" @click="filter.continent = continent.name">
                   <FontAwesomeIcon :icon="continent.icon" width="24" />
                   <span class="ms-3">
                     {{ continent.name }}

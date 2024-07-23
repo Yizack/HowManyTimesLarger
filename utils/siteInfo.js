@@ -4,7 +4,7 @@ export const siteInfo = {
     url: "https://yizack.com"
   },
   name: "How Many Times Larger",
-  name_short: "HowManyTimesLarger",
+  nameShort: "HowManyTimesLarger",
   description: "Website and Game for easy country size comparisons.",
   url: "https://howmanytimeslarger.yizack.com",
   email: "contact@yizack.com",

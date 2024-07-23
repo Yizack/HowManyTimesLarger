@@ -44,7 +44,7 @@ import { faMagnifyingGlass, faLocationDot } from "@fortawesome/free-solid-svg-ic
             </ul>
           </div>
         </div>
-        <!-- Go-->
+        <!-- Go -->
         <div class="col-lg-1 d-grid">
           <a class="btn btn-lg btn-primary text-uppercase" role="button" aria-label="Compare" @click="compare()"><FontAwesomeIcon :icon="faMagnifyingGlass" width="24" height="24" /></a>
         </div>

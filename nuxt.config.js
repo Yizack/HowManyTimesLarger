@@ -41,8 +41,25 @@ export default defineNuxtConfig({
     "~/assets/css/theme-dark.css",
     "~/assets/css/theme-light.css"
   ],
+  eslint: {
+    config: {
+      autoInit: false,
+      stylistic: true
+    }
+  },
+  nitro: {
+    cloudflare: {
+      pages: {
+        routes: {
+          exclude: ["/images/*"]
+        }
+      }
+    }
+  },
+  features: {
+    inlineStyles: true
+  },
   experimental: {
-    payloadExtraction: false,
-    inlineSSRStyles: false
+    payloadExtraction: false
   }
 });

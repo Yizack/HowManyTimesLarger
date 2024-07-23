@@ -13,15 +13,17 @@ if (CAPACITOR.isAndroid()) {
 </script>
 
 <template>
-  <LoadingPage v-if="loading" />
-  <NuxtLoadingIndicator :throttle="0" />
-  <NuxtLayout>
-    <Transition name="page" mode="out-in">
-      <div id="page">
-        <NuxtPage />
-      </div>
-    </Transition>
-  </NuxtLayout>
+  <div>
+    <LoadingPage v-if="loading" />
+    <NuxtLoadingIndicator :throttle="0" />
+    <NuxtLayout>
+      <Transition name="page" mode="out-in">
+        <div id="page">
+          <NuxtPage />
+        </div>
+      </Transition>
+    </NuxtLayout>
+  </div>
 </template>
 
 <script>

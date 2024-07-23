@@ -1,10 +1,10 @@
 {
-  "appId": "com.howmanytimeslarger.app",
+  "appId": "com.yizack.howmanytimeslarger",
   "appName": "How Many Times Larger",
   "webDir": ".output/public",
   "server": {
     "androidScheme": "https",
-    "hostname": "howmanytimeslarger.com"
+    "hostname": "howmanytimeslarger.yizack.com"
   },
   "plugins": {
     "SplashScreen": {

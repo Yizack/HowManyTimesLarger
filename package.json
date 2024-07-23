@@ -5,7 +5,7 @@
   "author": "Yizack Rangel",
   "license": "MIT",
   "type": "module",
-  "homepage": "https://howmanytimeslarger.com",
+  "homepage": "https://howmanytimeslarger.yizack.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/Yizack/HowManyTimesLarger"
@@ -28,27 +28,27 @@
     "sync": "node scripts/rmdirs.js && npx cap sync"
   },
   "devDependencies": {
-    "@capacitor/android": "^5.4.0",
-    "@capacitor/app": "^5.0.6",
-    "@capacitor/assets": "^2.0.4",
-    "@capacitor/cli": "^5.4.0",
-    "@capacitor/core": "^5.4.0",
-    "@capacitor/ios": "^5.4.0",
-    "@capacitor/preferences": "^5.0.6",
-    "@capacitor/splash-screen": "^5.0.6",
-    "@capacitor/status-bar": "^5.0.6",
-    "@nuxt/eslint-config": "^0.2.0",
+    "@capacitor/android": "^6.1.1",
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.1.1",
+    "@capacitor/core": "^6.1.1",
+    "@capacitor/ios": "^6.1.1",
+    "@capacitor/preferences": "^6.0.1",
+    "@capacitor/splash-screen": "^6.0.1",
+    "@capacitor/status-bar": "^6.0.0",
+    "@nuxt/eslint-config": "^0.3.13",
     "@trapezedev/configure": "^7.0.10",
-    "eslint": "^8.49.0",
-    "nuxt": "^3.7.3",
-    "stylelint": "^15.10.3",
+    "eslint": "^9.7.0",
+    "nuxt": "^3.12.4",
+    "stylelint": "^16.7.0",
     "xml": "^1.0.1"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/vue-fontawesome": "^3.0.3",
-    "bootstrap": "^5.3.2"
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "bootstrap": "^5.3.3"
   }
 }

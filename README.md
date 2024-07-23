@@ -4,7 +4,7 @@
 
 Website and Game for easy country size comparisons. Find out how many times larger a country is than another. Learn about the countries and territories of the world.
 
-[Play the game](https://howmanytimeslarger.com/game/) and test your knowledge!
+[Play the game](https://howmanytimeslarger.yizack.com/game/) and test your knowledge!
 
 
 # Countries and Territories
@@ -25,12 +25,12 @@ Currently, there are a total of **251** countries, including territories.
 - Android and iOS app created using [Capacitor.js](https://capacitorjs.com/) after Nuxt3 build.
 
 # Missing content?
-Send an email to contact@howmanytimeslarger.com, or [submit a new issue](https://github.com/Yizack/HowManyTimesLarger/issues/new) in the project's repository, or save me some time by correcting it yourself and [submitting a pull request](https://github.com/Yizack/HowManyTimesLarger/pulls) on GitHub for a review if you want to collaborate on the project.
+Send an email to contact@yizack.com, or [submit a new issue](https://github.com/Yizack/HowManyTimesLarger/issues/new) in the project's repository, or save me some time by correcting it yourself and [submitting a pull request](https://github.com/Yizack/HowManyTimesLarger/pulls) on GitHub for a review if you want to collaborate on the project.
 
 Please provide a little explanation and the source link of the information you wish to add or correct.
 
 # Have you found an error or a bug?
-Send an email to contact@howmanytimeslarger.com or [submit a new issue](https://github.com/Yizack/HowManyTimesLarger/issues/new) in the project's repository or [submit a pull request](https://github.com/Yizack/HowManyTimesLarger/pulls) on GitHub for a review if you managed to patch the error/bug and want to collaborate on the project.
+Send an email to contact@yizack.com or [submit a new issue](https://github.com/Yizack/HowManyTimesLarger/issues/new) in the project's repository or [submit a pull request](https://github.com/Yizack/HowManyTimesLarger/pulls) on GitHub for a review if you managed to patch the error/bug and want to collaborate on the project.
 
 Please provide additional information such as the browser, device, and operating system you are using and what were you doing when you encountered the error.
 

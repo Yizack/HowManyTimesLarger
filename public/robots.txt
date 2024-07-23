@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://howmanytimeslarger.com/sitemap.xml
+Sitemap: https://howmanytimeslarger.yizack.com/sitemap.xml

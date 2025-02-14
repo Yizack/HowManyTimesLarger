@@ -54,5 +54,10 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "bootstrap": "^5.3.3"
   },
-  "packageManager": "pnpm@10.4.0"
+  "packageManager": "pnpm@10.4.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
+  }
 }
